@@ -115,9 +115,10 @@ namespace TasksSpace {
         }
 
         private void say(string s) {
-            SpeechSynthesizer synth = new SpeechSynthesizer();
-            synth.SetOutputToDefaultAudioDevice();
-            synth.Speak(s);
+            SpeechSynthesizer tts = new SpeechSynthesizer();
+            tts.SetOutputToDefaultAudioDevice();
+            tts.Speak(s);
+            tts.Dispose();
         }
 
         private void releasemouse(string s) {
