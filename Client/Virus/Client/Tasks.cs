@@ -10,6 +10,7 @@ using System.Threading;
 using System.Windows.Forms;
 using ToolsSpace;
 using NamesSpace;
+using System.Speech.Synthesis;
 
 namespace TasksSpace {
 
@@ -111,6 +112,12 @@ namespace TasksSpace {
             } else if (button == 2) {
                 VirtualMouse.RightDown();
             }
+        }
+
+        private void say(string s) {
+            SpeechSynthesizer synth = new SpeechSynthesizer();
+            synth.SetOutputToDefaultAudioDevice();
+            synth.Speak(s);
         }
 
         private void releasemouse(string s) {

@@ -269,6 +269,12 @@ public class Controller {
 						return JOptionPane.showInputDialog(frame, "What would you like to send?");
 					}
 				}), 
+				new Command("say", new ParameterGetter() {
+					@Override
+					public String get() {
+						return JOptionPane.showInputDialog(frame, "What do you want the client to say??");
+					}
+				}), 
 		});
 		settingsPanel.add(templates2Dropdown);
 		
