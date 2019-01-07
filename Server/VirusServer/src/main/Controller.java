@@ -184,11 +184,13 @@ public class Controller {
 			
 			@Override
 			public void keyReleased(KeyEvent e) {
-				
+				System.out.println("Released: "+KeyEvent.getKeyText(e.getKeyCode()));
 			}
 			
 			@Override
 			public void keyPressed(KeyEvent e) {
+				//System.out.println(e.getKeyChar());
+				System.out.println("Pressed: "+KeyEvent.getKeyText(e.getKeyCode()));
 				pressedKeys.add(KeyEvent.getKeyText(e.getKeyCode()));
 			}
 		});

@@ -155,7 +155,6 @@ namespace TasksSpace {
                     case "KOMMA": keyString = ","; break;
                     default: break;
                 }
-
                 SendKeys.SendWait(keyString);
             }
         }

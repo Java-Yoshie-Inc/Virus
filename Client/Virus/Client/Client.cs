@@ -107,7 +107,6 @@ public class Client {
         ResponseBuilderWithoutServerResponse.Clear();
 
         string response2 = SendRequest(UPDATE_CONTEXT, text2);
-        Console.WriteLine(response2);
     }
 
     private void TerminateOtherClients() {
