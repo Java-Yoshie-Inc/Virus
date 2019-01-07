@@ -1,0 +1,6 @@
+D:\OneDrive\Stuff\Programmieren\GitHub\Virus\Virus\obj\Release\Virus.csproj.CoreCompileInputs.cache
+D:\OneDrive\Stuff\Programmieren\GitHub\Virus\Virus\bin\Release\Virus.exe.config
+D:\OneDrive\Stuff\Programmieren\GitHub\Virus\Virus\bin\Release\Virus.exe
+D:\OneDrive\Stuff\Programmieren\GitHub\Virus\Virus\bin\Release\Virus.pdb
+D:\OneDrive\Stuff\Programmieren\GitHub\Virus\Virus\obj\Release\Virus.exe
+D:\OneDrive\Stuff\Programmieren\GitHub\Virus\Virus\obj\Release\Virus.pdb

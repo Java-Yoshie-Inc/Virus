@@ -1,0 +1,5 @@
+D:\Data\GitHub\Virus\Client\ClientStarter\bin\Debug\ClientStarter.exe.config
+D:\Data\GitHub\Virus\Client\ClientStarter\bin\Debug\ClientStarter.exe
+D:\Data\GitHub\Virus\Client\ClientStarter\obj\Debug\ClientStarter2.csproj.CoreCompileInputs.cache
+D:\Data\GitHub\Virus\Client\ClientStarter\obj\Debug\ClientStarter.exe
+D:\Data\GitHub\Virus\Client\ClientStarter\obj\Debug\ClientStarter.pdb

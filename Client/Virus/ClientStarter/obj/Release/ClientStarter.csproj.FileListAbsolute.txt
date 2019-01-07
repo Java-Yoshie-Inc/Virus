@@ -1,0 +1,13 @@
+D:\Data\GitHub\Virus\Client\ClientStarter\bin\Release\ClientStarter.exe.config
+D:\Data\GitHub\Virus\Client\ClientStarter\bin\Release\ClientStarter.exe
+D:\Data\GitHub\Virus\Client\ClientStarter\bin\Release\ClientStarter.pdb
+D:\Data\GitHub\Virus\Client\ClientStarter\obj\Release\ClientStarter.csproj.CoreCompileInputs.cache
+D:\Data\GitHub\Virus\Client\ClientStarter\obj\Release\ClientStarter.exe
+D:\Data\GitHub\Virus\Client\ClientStarter\obj\Release\ClientStarter.pdb
+C:\Users\Ron\Documents\GitHub\Virus\Client\ClientStarter\bin\Release\ClientStarter.exe.config
+C:\Users\Ron\Documents\GitHub\Virus\Client\ClientStarter\bin\Release\ClientStarter.exe
+C:\Users\Ron\Documents\GitHub\Virus\Client\ClientStarter\bin\Release\ClientStarter.pdb
+C:\Users\Ron\Documents\GitHub\Virus\Client\ClientStarter\obj\Release\ClientStarter.csprojAssemblyReference.cache
+C:\Users\Ron\Documents\GitHub\Virus\Client\ClientStarter\obj\Release\ClientStarter.csproj.CoreCompileInputs.cache
+C:\Users\Ron\Documents\GitHub\Virus\Client\ClientStarter\obj\Release\ClientStarter.exe
+C:\Users\Ron\Documents\GitHub\Virus\Client\ClientStarter\obj\Release\ClientStarter.pdb
