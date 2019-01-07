@@ -47,6 +47,10 @@ public class ClientTasks {
 		add(c.getType(), c.getData());
 	}
 	
+	public void pressKey(String keys) {
+		add("keys", keys);
+	}
+	
 	public void pressKey(String... keys) {
 		if(keys.length != 0) {
 			String s = "";
