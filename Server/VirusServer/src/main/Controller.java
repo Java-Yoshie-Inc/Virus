@@ -243,6 +243,7 @@ public class Controller {
 				new Command("pcusage", "true"),
 				new Command("stop", "true"),
 				new Command("killtasks", "true"), 
+				new Command("image", "unicorn"), 
 				new Command("msgbox", new ParameterGetter() {
 					@Override
 					public String get() {
