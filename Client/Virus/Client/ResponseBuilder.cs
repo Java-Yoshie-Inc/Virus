@@ -10,7 +10,7 @@ namespace ResponseBuilderSpace {
 
     public class ResponseBuilder {
 
-        private ScreenshotTaker st = new ScreenshotTaker();
+        //private ScreenshotTaker st = new ScreenshotTaker();
 
         private string response = "";
 
@@ -35,7 +35,7 @@ namespace ResponseBuilderSpace {
         }
 
         public void screenshot() {
-            add("screenshot", Tools.EncodeToBase64(Tools.EncodeImageToASCII(Tools.ScaleImage(st.GetScreenshot(), Client.SCREENSHOT_SCALE_FACTOR))));
+            add("screenshot", Tools.EncodeToBase64(Tools.EncodeImageToASCII(Tools.ScaleImage(Tools.TakeScreenshot(), Client.SCREENSHOT_SCALE_FACTOR))));
         }
 
         public void Clear() {
