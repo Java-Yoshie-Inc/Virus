@@ -12,15 +12,15 @@ namespace ToolsSpace {
     public class Tools {
 
         public static Bitmap ScaleImage(Bitmap image, float scaleFactor) {
-            Graphics screenshotGraphics = Graphics.FromImage(image);
-            screenshotGraphics.CopyFromScreen(0, 0, 0, 0, new Size(image.Width, image.Height));
-            screenshotGraphics.Flush();
-
             return new Bitmap(image, new Size((int)(image.Width * scaleFactor), (int)(image.Height * scaleFactor)));
         }
 
         public static Bitmap TakeScreenshot() {
-            return ScaleImage(new Bitmap(Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height), 1);
+            Bitmap image = ScaleImage(new Bitmap(Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height), 1);
+            Graphics screenshotGraphics = Graphics.FromImage(image);
+            screenshotGraphics.CopyFromScreen(0, 0, 0, 0, new Size(image.Width, image.Height));
+            screenshotGraphics.Flush();
+            return image;
         }
 
         public static byte[] EncodeImageToASCII(Image img) {

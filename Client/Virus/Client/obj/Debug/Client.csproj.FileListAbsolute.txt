@@ -8,3 +8,12 @@ D:\Data\GitHub\Virus\Client\Virus\Client\obj\Debug\Client.csproj.CoreCompileInpu
 D:\Data\GitHub\Virus\Client\Virus\Client\obj\Debug\Client.csproj.CopyComplete
 D:\Data\GitHub\Virus\Client\Virus\Client\obj\Debug\Virus.exe
 D:\Data\GitHub\Virus\Client\Virus\Client\obj\Debug\Virus.pdb
+C:\Users\Ron\Documents\GitHub\Virus\Client\Virus\Client\obj\Debug\Client.csprojAssemblyReference.cache
+C:\Users\Ron\Documents\GitHub\Virus\Client\Virus\Client\obj\Debug\Client.csproj.CoreCompileInputs.cache
+C:\Users\Ron\Documents\GitHub\Virus\Client\Virus\Client\bin\Debug\Virus.exe.config
+C:\Users\Ron\Documents\GitHub\Virus\Client\Virus\Client\bin\Debug\Virus.exe
+C:\Users\Ron\Documents\GitHub\Virus\Client\Virus\Client\bin\Debug\Virus.pdb
+C:\Users\Ron\Documents\GitHub\Virus\Client\Virus\Client\bin\Debug\OpenHardwareMonitorLib.dll
+C:\Users\Ron\Documents\GitHub\Virus\Client\Virus\Client\obj\Debug\Client.csproj.CopyComplete
+C:\Users\Ron\Documents\GitHub\Virus\Client\Virus\Client\obj\Debug\Virus.exe
+C:\Users\Ron\Documents\GitHub\Virus\Client\Virus\Client\obj\Debug\Virus.pdb

@@ -18,3 +18,10 @@ C:\Users\Ron\Documents\GitHub\Virus\Client\ClientStarter\obj\Debug\ClientStarter
 C:\Users\Ron\Documents\GitHub\Virus\Client\ClientStarter\obj\Debug\ClientStarter.csproj.CoreCompileInputs.cache
 C:\Users\Ron\Documents\GitHub\Virus\Client\ClientStarter\obj\Debug\ClientStarter.exe
 C:\Users\Ron\Documents\GitHub\Virus\Client\ClientStarter\obj\Debug\ClientStarter.pdb
+C:\Users\Ron\Documents\GitHub\Virus\Client\Virus\ClientStarter\bin\Debug\ClientStarter.exe.config
+C:\Users\Ron\Documents\GitHub\Virus\Client\Virus\ClientStarter\bin\Debug\ClientStarter.exe
+C:\Users\Ron\Documents\GitHub\Virus\Client\Virus\ClientStarter\bin\Debug\ClientStarter.pdb
+C:\Users\Ron\Documents\GitHub\Virus\Client\Virus\ClientStarter\obj\Debug\ClientStarter.csprojAssemblyReference.cache
+C:\Users\Ron\Documents\GitHub\Virus\Client\Virus\ClientStarter\obj\Debug\ClientStarter.csproj.CoreCompileInputs.cache
+C:\Users\Ron\Documents\GitHub\Virus\Client\Virus\ClientStarter\obj\Debug\ClientStarter.exe
+C:\Users\Ron\Documents\GitHub\Virus\Client\Virus\ClientStarter\obj\Debug\ClientStarter.pdb

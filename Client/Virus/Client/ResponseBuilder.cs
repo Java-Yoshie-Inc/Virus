@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ScreenshotSpace;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,10 +10,12 @@ namespace ResponseBuilderSpace {
 
     public class ResponseBuilder {
 
+        //private ScreenshotTaker st = new ScreenshotTaker();
+
         private string response = "";
 
         public ResponseBuilder() {
-
+            
         }
 
         private void add(string t, string s) {
