@@ -331,7 +331,7 @@ public class Controller {
 	}
 
 	private void update() {
-		//System.out.println(keyListener.toString());
+		System.out.println(keyListener.toString());
 		
 		//Update UPS
 		if(clientDropdown.getSelectedItem() != null) {

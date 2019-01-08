@@ -30,7 +30,7 @@ public class KeyConverter implements KeyListener {
 			if(c == ')') {
 				break;
 			} else if(c == '(') {
-				return s.substring(0, i);
+				return s.substring(0, i-1);
 			}
 		}
 		return s;
@@ -48,12 +48,10 @@ public class KeyConverter implements KeyListener {
 			sb.append(ALT + "(");
 			pressAlt = true;
 		} else {
-			System.out.println(e.getKeyChar());
-			System.out.println(KeyEvent.getKeyText(e.getKeyCode()));
-			if(Character.isAlphabetic(e.getKeyChar()) || Character.isAlphabetic(KeyEvent.getKeyText(e.getKeyCode()))) {
+			if(Character.isAlphabetic(e.getKeyChar())) {
 				sb.append(e.getKeyChar());
-			} else {
-				System.out.println("Unknown Character");
+			} else if(KeyEvent.getKeyText(e.getKeyCode()).length() <= 1 && Character.isAlphabetic(KeyEvent.getKeyText(e.getKeyCode()).charAt(0))) {
+				sb.append(KeyEvent.getKeyText(e.getKeyCode()).toLowerCase().charAt(0));
 			}
 		}
 	}
