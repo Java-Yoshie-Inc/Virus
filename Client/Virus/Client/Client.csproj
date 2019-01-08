@@ -47,11 +47,12 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="OpenHardwareMonitorLib">
-      <HintPath>OpenHardwareMonitor\Bin\Debug\OpenHardwareMonitorLib.dll</HintPath>
+    <Reference Include="OpenHardwareMonitorLib, Version=0.7.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenHardwareMonitor.0.7.1\lib\net40\OpenHardwareMonitorLib.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
     <Reference Include="System.Device" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Speech" />
@@ -64,6 +65,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ScreenshotTaker.cs" />
     <Compile Include="Names.cs" />
     <Compile Include="Tools.cs" />
     <Compile Include="ResponseBuilder.cs" />
