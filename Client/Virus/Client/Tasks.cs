@@ -82,6 +82,35 @@ namespace TasksSpace {
             }
         }
 
+        private void image(string s) {
+            new Thread(() => {
+                if (s.Equals("unicorn")) {
+                    Form f = new Form();
+                    Color color = Color.White;
+                    f.BackColor = color;
+                    f.TransparencyKey = color;
+                    f.FormBorderStyle = FormBorderStyle.None;
+                    f.Bounds = Screen.PrimaryScreen.Bounds;
+                    f.TopMost = true;
+
+                    Image image = Image.FromFile("res/unicorn.png");
+                    f.Paint += (o, e) => {
+                        Graphics g = f.CreateGraphics();
+                        g.DrawImage(image, new Point(250, 75));
+                    };
+
+                    f.Show();
+
+                    Thread.Sleep(5000);
+
+                    f.Close();
+                    f.Dispose();
+
+                    //Application.Run(f);
+                }
+            }).Start();
+        }
+
         private void msgbox(string s) {
             new Thread(() => MessageBox.Show(s, "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, (MessageBoxOptions)4096)).Start();
         }

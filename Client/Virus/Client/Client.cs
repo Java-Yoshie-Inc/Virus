@@ -3,11 +3,13 @@ using NamesSpace;
 using ResponseBuilderSpace;
 using System;
 using System.Diagnostics;
+using System.Drawing;
 using System.IO;
 using System.Net;
 using System.Net.Sockets;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using TasksSpace;
 using ToolsSpace;
 
@@ -26,7 +28,7 @@ public class Client {
     private static readonly int DELAY = 0;
     private static readonly int TIMEOUT = 6*1000;
 
-    private bool isRunning = true, isLoggedIn = false, useThreads = true;
+    private bool isRunning = true, isLoggedIn = false;
 
     private readonly ResponseBuilder ResponseBuilder = new ResponseBuilder();
     private readonly ResponseBuilder ResponseBuilderWithoutServerResponse = new ResponseBuilder();
