@@ -75,6 +75,11 @@ public class Client {
     }
 
     public void StartTimer() {
+        /*while(true) {
+            Update();
+            Thread.Sleep(100);
+        }*/
+
         Task t = Task.Run(async () => {
             while (isRunning) {
                 Update();
@@ -89,6 +94,7 @@ public class Client {
 
         if (!isLoggedIn) {
             Login();
+            return;
         }
 
         //With Response
