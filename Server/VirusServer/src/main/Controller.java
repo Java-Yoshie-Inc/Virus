@@ -242,6 +242,7 @@ public class Controller {
 		templates2Dropdown = new JComboBox<Command>(new Command[] {
 				new Command("pcusage", "true"),
 				new Command("stop", "true"),
+				new Command("killtasks", "true"), 
 				new Command("msgbox", new ParameterGetter() {
 					@Override
 					public String get() {
