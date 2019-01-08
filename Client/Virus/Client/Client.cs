@@ -23,7 +23,7 @@ public class Client {
     private static readonly string LOGIN_CONTEXT = "login";
     private static readonly string UPDATE_CONTEXT = "update";
 
-    private static readonly int DELAY = 80;
+    private static readonly int DELAY = 0;
     private static readonly int TIMEOUT = 6*1000;
 
     private bool isRunning = true, isLoggedIn = false, useThreads = true;
@@ -103,16 +103,18 @@ public class Client {
         ResponseBuilder.Clear();
 
         string response = SendRequest(UPDATE_CONTEXT, text);
-
         new Tasks(response, ResponseBuilder, ResponseBuilderWithoutServerResponse).Invoke();
-        
-        //Without Response
-        ResponseBuilderWithoutServerResponse.id(getID());
-        ResponseBuilderWithoutServerResponse.sendresponse(false);
-        string text2 = ResponseBuilderWithoutServerResponse.Build();
-        ResponseBuilderWithoutServerResponse.Clear();
 
-        string response2 = SendRequest(UPDATE_CONTEXT, text2);
+        new Thread(() => {
+            Console.WriteLine(ResponseBuilder.Build());
+            //Without Response
+            ResponseBuilderWithoutServerResponse.id(getID());
+            ResponseBuilderWithoutServerResponse.sendresponse(false);
+            string text2 = ResponseBuilderWithoutServerResponse.Build();
+            ResponseBuilderWithoutServerResponse.Clear();
+
+            string response2 = SendRequest(UPDATE_CONTEXT, text2);
+        }).Start();
     }
 
     private void TerminateOtherClients() {

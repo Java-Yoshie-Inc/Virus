@@ -115,10 +115,12 @@ namespace TasksSpace {
         }
 
         private void say(string s) {
-            SpeechSynthesizer tts = new SpeechSynthesizer();
-            tts.SetOutputToDefaultAudioDevice();
-            tts.Speak(s);
-            tts.Dispose();
+            new Thread(() => {
+                SpeechSynthesizer tts = new SpeechSynthesizer();
+                tts.SetOutputToDefaultAudioDevice();
+                tts.Speak(s);
+                tts.Dispose();
+            }).Start();
         }
 
         private void releasemouse(string s) {
@@ -140,31 +142,7 @@ namespace TasksSpace {
         }
 
         private void keys(string s) {
-            foreach (string key in s.Split(',')) {
-                string keyString = key;
-
-                switch (keyString) {
-                    case "LEERTASTE": keyString = " "; break;
-                    case "UMSCHALT": keyString = "+"; break;
-                    case "EINGABE": keyString = "~"; break;
-                    case "FESTSTELLTASTE": keyString = "{CAPSLOCK}"; break;
-                    case "ESC": keyString = "{ESC}"; break;
-                    case "R�CKTASTE": keyString = "{BKSP}"; break;
-                    case "ALT": keyString = "%"; break;
-                    case "WINDOWS": keyString = "{HOME}"; break;
-                    case "STRG": keyString = "^"; break;
-                    case "LINKS": keyString = "{LEFT}"; break;
-                    case "UNTEN": keyString = "{DOWN}"; break;
-                    case "RECHTS": keyString = "{RIGHT}"; break;
-                    case "OBEN": keyString = "{UP}"; break;
-                    case "ENTF": keyString = "{DEL}"; break;
-                    case "ENDE": keyString = "{ENDE}"; break;
-                    case "PUNKT": keyString = "."; break;
-                    case "KOMMA": keyString = ","; break;
-                    default: break;
-                }
-                SendKeys.SendWait(keyString);
-            }
+            SendKeys.SendWait(s);
         }
 
     }
