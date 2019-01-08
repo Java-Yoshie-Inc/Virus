@@ -276,6 +276,13 @@ public class Controller {
 		settingsPanel.add(new JLabel());
 		
 		screenshotButton = new JRadioButton("Transmit Screen");
+		screenshotButton.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				mouseMovingButton.setEnabled(screenshotButton.isSelected());
+				mouseMovingButton.setSelected(false);
+			}
+		});
 		settingsPanel.add(screenshotButton);
 		
 		mouseMovingButton = new JRadioButton("Control Inputs");
@@ -285,6 +292,7 @@ public class Controller {
 				keyListener.reset();
 			}
 		});
+		mouseMovingButton.setEnabled(screenshotButton.isSelected());
 		settingsPanel.add(mouseMovingButton);
 		
 		blockInputsButton = new JRadioButton("Block User Inputs");
@@ -331,8 +339,6 @@ public class Controller {
 	}
 
 	private void update() {
-		System.out.println(keyListener.toString());
-		
 		//Update UPS
 		if(clientDropdown.getSelectedItem() != null) {
 			upsLabel.setText("UPS: " + ((ClientData) clientDropdown.getSelectedItem()).getAverageUPS());

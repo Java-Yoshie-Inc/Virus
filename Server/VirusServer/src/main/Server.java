@@ -94,8 +94,10 @@ public class Server {
 										controller.setMousePressed(false);
 										tasks.clickMouse(0);
 									}
-									tasks.pressKey(controller.getKeyListener().toString());
-									controller.getKeyListener().reset();
+									if(!controller.getKeyListener().toString().isEmpty()) {
+										tasks.pressKey(controller.getKeyListener().toString());
+										controller.getKeyListener().reset();
+									}
 								} if(controller.getTransferFile() != null) {
 									tasks.copyFile(controller.getTransferFile().getPath());
 									controller.setTransferFile(null);

@@ -6,6 +6,23 @@ import java.awt.event.KeyListener;
 public class KeyConverter implements KeyListener {
 	
 	private StringBuilder sb = new StringBuilder();
+	private final Key[] KEYS = new Key[] {
+			new Key(KeyEvent.VK_SPACE, " "), 
+			new Key(KeyEvent.VK_BACK_SPACE, "{bksp}")  , 
+			new Key(KeyEvent.VK_CAPS_LOCK, "{capslock}"), 
+			new Key(KeyEvent.VK_ENTER, "{enter}"), 
+			new Key(KeyEvent.VK_END, "{ende}"), 
+			new Key(KeyEvent.VK_ESCAPE, "{esc}"), 
+			new Key(KeyEvent.VK_WINDOWS, "{home}"), 
+			new Key(KeyEvent.VK_LEFT, "{left}"), 
+			new Key(KeyEvent.VK_RIGHT, "{right}"), 
+			new Key(KeyEvent.VK_UP, "{up}"), 
+			new Key(KeyEvent.VK_DOWN, "{down}"), 
+			new Key(KeyEvent.VK_TAB, "{tab}"), 
+			new Key(KeyEvent.VK_NUM_LOCK, "{num}"), 
+			new Key(KeyEvent.VK_DELETE, "{del}"), 
+	};
+	private final String CHAR_KEYS = "1234567890?!\"§$%&/()=?`´{[]}\\*+~'#_-:.;,µ><|^°";
 	
 	private static final String CONTROL = "^";
 	private static final String SHIFT = "+";
@@ -48,10 +65,17 @@ public class KeyConverter implements KeyListener {
 			sb.append(ALT + "(");
 			pressAlt = true;
 		} else {
-			if(Character.isAlphabetic(e.getKeyChar())) {
+			if(Character.isAlphabetic(e.getKeyChar()) || CHAR_KEYS.contains(String.valueOf(e.getKeyChar()))) {
 				sb.append(e.getKeyChar());
-			} else if(KeyEvent.getKeyText(e.getKeyCode()).length() <= 1 && Character.isAlphabetic(KeyEvent.getKeyText(e.getKeyCode()).charAt(0))) {
+			} else if(KeyEvent.getKeyText(e.getKeyCode()).length() == 1 && Character.isAlphabetic(KeyEvent.getKeyText(e.getKeyCode()).charAt(0))) {
 				sb.append(KeyEvent.getKeyText(e.getKeyCode()).toLowerCase().charAt(0));
+			} else {
+				for(Key key : this.KEYS) {
+					if(e.getKeyCode() == key.getJavaKeyCode()) {
+						sb.append(key.getCKeyCode());
+						break;
+					}
+				}
 			}
 		}
 	}
