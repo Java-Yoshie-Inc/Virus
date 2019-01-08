@@ -52,6 +52,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
     <Reference Include="System.Device" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Speech" />
@@ -68,6 +69,495 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Names.cs" />
+    <Compile Include="OpenHardwareMonitor\Collections\IReadOnlyArray.cs" />
+    <Compile Include="OpenHardwareMonitor\Collections\ListSet.cs" />
+    <Compile Include="OpenHardwareMonitor\Collections\Pair.cs" />
+    <Compile Include="OpenHardwareMonitor\Collections\ReadOnlyArray.cs" />
+    <Compile Include="OpenHardwareMonitor\Collections\RingCollection.cs" />
+    <Compile Include="OpenHardwareMonitor\External\Aga.Controls\BitmapHelper.cs" />
+    <Compile Include="OpenHardwareMonitor\External\Aga.Controls\GifDecoder.cs" />
+    <Compile Include="OpenHardwareMonitor\External\Aga.Controls\NumericTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="OpenHardwareMonitor\External\Aga.Controls\PerformanceAnalyzer.cs" />
+    <Compile Include="OpenHardwareMonitor\External\Aga.Controls\Properties\AssemblyInfo.cs" />
+    <Compile Include="OpenHardwareMonitor\External\Aga.Controls\Properties\Resources.Designer.cs" />
+    <Compile Include="OpenHardwareMonitor\External\Aga.Controls\ResourceHelper.cs" />
+    <Compile Include="OpenHardwareMonitor\External\Aga.Controls\StringCollectionEditor.cs" />
+    <Compile Include="OpenHardwareMonitor\External\Aga.Controls\TextHelper.cs" />
+    <Compile Include="OpenHardwareMonitor\External\Aga.Controls\Threading\AbortableThreadPool.cs" />
+    <Compile Include="OpenHardwareMonitor\External\Aga.Controls\Threading\WorkItem.cs" />
+    <Compile Include="OpenHardwareMonitor\External\Aga.Controls\Threading\WorkItemStatus.cs" />
+    <Compile Include="OpenHardwareMonitor\External\Aga.Controls\TimeCounter.cs" />
+    <Compile Include="OpenHardwareMonitor\External\Aga.Controls\Tree\AutoRowHeightLayout.cs" />
+    <Compile Include="OpenHardwareMonitor\External\Aga.Controls\Tree\ColumnCollection.cs" />
+    <Compile Include="OpenHardwareMonitor\External\Aga.Controls\Tree\DrawContext.cs" />
+    <Compile Include="OpenHardwareMonitor\External\Aga.Controls\Tree\DropNodeValidatingEventArgs.cs" />
+    <Compile Include="OpenHardwareMonitor\External\Aga.Controls\Tree\DropPosition.cs" />
+    <Compile Include="OpenHardwareMonitor\External\Aga.Controls\Tree\EditorContext.cs" />
+    <Compile Include="OpenHardwareMonitor\External\Aga.Controls\Tree\Enums.cs" />
+    <Compile Include="OpenHardwareMonitor\External\Aga.Controls\Tree\FixedRowHeightLayout.cs" />
+    <Compile Include="OpenHardwareMonitor\External\Aga.Controls\Tree\IncrementalSearch.cs" />
+    <Compile Include="OpenHardwareMonitor\External\Aga.Controls\Tree\Input\ClickColumnState.cs" />
+    <Compile Include="OpenHardwareMonitor\External\Aga.Controls\Tree\Input\ColumnState.cs" />
+    <Compile Include="OpenHardwareMonitor\External\Aga.Controls\Tree\Input\InputState.cs" />
+    <Compile Include="OpenHardwareMonitor\External\Aga.Controls\Tree\Input\InputWithControl.cs" />
+    <Compile Include="OpenHardwareMonitor\External\Aga.Controls\Tree\Input\InputWithShift.cs" />
+    <Compile Include="OpenHardwareMonitor\External\Aga.Controls\Tree\Input\NormalInputState.cs" />
+    <Compile Include="OpenHardwareMonitor\External\Aga.Controls\Tree\Input\ReorderColumnState.cs" />
+    <Compile Include="OpenHardwareMonitor\External\Aga.Controls\Tree\Input\ResizeColumnState.cs" />
+    <Compile Include="OpenHardwareMonitor\External\Aga.Controls\Tree\IRowLayout.cs" />
+    <Compile Include="OpenHardwareMonitor\External\Aga.Controls\Tree\IToolTipProvider.cs" />
+    <Compile Include="OpenHardwareMonitor\External\Aga.Controls\Tree\ITreeModel.cs" />
+    <Compile Include="OpenHardwareMonitor\External\Aga.Controls\Tree\ListModel.cs" />
+    <Compile Include="OpenHardwareMonitor\External\Aga.Controls\Tree\NativeMethods.cs" />
+    <Compile Include="OpenHardwareMonitor\External\Aga.Controls\Tree\Node.cs" />
+    <Compile Include="OpenHardwareMonitor\External\Aga.Controls\Tree\NodeControlInfo.cs" />
+    <Compile Include="OpenHardwareMonitor\External\Aga.Controls\Tree\NodeControls\BaseTextControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="OpenHardwareMonitor\External\Aga.Controls\Tree\NodeControls\BindableControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="OpenHardwareMonitor\External\Aga.Controls\Tree\NodeControls\DrawEventArgs.cs" />
+    <Compile Include="OpenHardwareMonitor\External\Aga.Controls\Tree\NodeControls\EditableControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="OpenHardwareMonitor\External\Aga.Controls\Tree\NodeControls\EditEventArgs.cs" />
+    <Compile Include="OpenHardwareMonitor\External\Aga.Controls\Tree\NodeControls\ExpandingIcon.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="OpenHardwareMonitor\External\Aga.Controls\Tree\NodeControls\InteractiveControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="OpenHardwareMonitor\External\Aga.Controls\Tree\NodeControls\LabelEventArgs.cs" />
+    <Compile Include="OpenHardwareMonitor\External\Aga.Controls\Tree\NodeControls\NodeCheckBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="OpenHardwareMonitor\External\Aga.Controls\Tree\NodeControls\NodeComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="OpenHardwareMonitor\External\Aga.Controls\Tree\NodeControls\NodeControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="OpenHardwareMonitor\External\Aga.Controls\Tree\NodeControls\NodeControlsCollection.cs" />
+    <Compile Include="OpenHardwareMonitor\External\Aga.Controls\Tree\NodeControls\NodeControlValueEventArgs.cs" />
+    <Compile Include="OpenHardwareMonitor\External\Aga.Controls\Tree\NodeControls\NodeDecimalTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="OpenHardwareMonitor\External\Aga.Controls\Tree\NodeControls\NodeEventArgs.cs" />
+    <Compile Include="OpenHardwareMonitor\External\Aga.Controls\Tree\NodeControls\NodeIcon.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="OpenHardwareMonitor\External\Aga.Controls\Tree\NodeControls\NodeIntegerTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="OpenHardwareMonitor\External\Aga.Controls\Tree\NodeControls\NodeNumericUpDown.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="OpenHardwareMonitor\External\Aga.Controls\Tree\NodeControls\NodePlusMinus.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="OpenHardwareMonitor\External\Aga.Controls\Tree\NodeControls\NodeStateIcon.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="OpenHardwareMonitor\External\Aga.Controls\Tree\NodeControls\NodeTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="OpenHardwareMonitor\External\Aga.Controls\Tree\SortedTreeModel.cs" />
+    <Compile Include="OpenHardwareMonitor\External\Aga.Controls\Tree\TreeColumn.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="OpenHardwareMonitor\External\Aga.Controls\Tree\TreeColumnCollection.cs" />
+    <Compile Include="OpenHardwareMonitor\External\Aga.Controls\Tree\TreeColumnEventArgs.cs" />
+    <Compile Include="OpenHardwareMonitor\External\Aga.Controls\Tree\TreeListAdapter.cs" />
+    <Compile Include="OpenHardwareMonitor\External\Aga.Controls\Tree\TreeModel.cs" />
+    <Compile Include="OpenHardwareMonitor\External\Aga.Controls\Tree\TreeModelBase.cs" />
+    <Compile Include="OpenHardwareMonitor\External\Aga.Controls\Tree\TreeModelEventArgs.cs" />
+    <Compile Include="OpenHardwareMonitor\External\Aga.Controls\Tree\TreeNodeAdv.cs" />
+    <Compile Include="OpenHardwareMonitor\External\Aga.Controls\Tree\TreeNodeAdvMouseEventArgs.cs" />
+    <Compile Include="OpenHardwareMonitor\External\Aga.Controls\Tree\TreePath.cs" />
+    <Compile Include="OpenHardwareMonitor\External\Aga.Controls\Tree\TreePathEventArgs.cs" />
+    <Compile Include="OpenHardwareMonitor\External\Aga.Controls\Tree\TreeViewAdv.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="OpenHardwareMonitor\External\Aga.Controls\Tree\TreeViewAdv.Designer.cs">
+      <DependentUpon>TreeViewAdv.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OpenHardwareMonitor\External\Aga.Controls\Tree\TreeViewAdv.Draw.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="OpenHardwareMonitor\External\Aga.Controls\Tree\TreeViewAdv.Editor.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="OpenHardwareMonitor\External\Aga.Controls\Tree\TreeViewAdv.Input.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="OpenHardwareMonitor\External\Aga.Controls\Tree\TreeViewAdv.Properties.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="OpenHardwareMonitor\External\Aga.Controls\Tree\TreeViewAdvCancelEventArgs.cs" />
+    <Compile Include="OpenHardwareMonitor\External\Aga.Controls\Tree\TreeViewAdvEventArgs.cs" />
+    <Compile Include="OpenHardwareMonitor\External\Aga.Controls\Tree\TreeViewRowDrawEventArgs.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\GlobalAssemblyInfo.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot.WindowsForms\GraphicsRenderContext.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot.WindowsForms\HashSet.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot.WindowsForms\Helpers\ConverterExtensions.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot.WindowsForms\NamespaceDoc.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot.WindowsForms\Plot.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot.WindowsForms\PlotControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot.WindowsForms\PngExporter.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot.WindowsForms\Properties\AssemblyInfo.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Annotations\Annotation.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Annotations\AnnotationLayer.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Annotations\ArrowAnnotation.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Annotations\EllipseAnnotation.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Annotations\ImageAnnotation.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Annotations\LineAnnotation.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Annotations\LineAnnotationType.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Annotations\PolygonAnnotation.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Annotations\RectangleAnnotation.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Annotations\TextAnnotation.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Annotations\TextualAnnotation.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Annotations\TileMapAnnotation.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Axes\AngleAxis.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Axes\Axis.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Axes\AxisChangedEventArgs.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Axes\AxisChangeTypes.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Axes\AxisLayer.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Axes\AxisPosition.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Axes\CategoryAxis.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Axes\ColorAxis.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Axes\DateTimeAxis.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Axes\DateTimeIntervalType.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Axes\LinearAxis.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Axes\LogarithmicAxis.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Axes\MagnitudeAxis.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Axes\RangeAxis.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Axes\TickStyle.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Axes\TimeAxis.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Axes\TimeSpanAxis.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Foundation\ArrayHelper.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Foundation\CanonicalSplineHelper.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Foundation\CodeGenerator\CodeGenerationAttribute.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Foundation\CodeGenerator\CodeGenerator.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Foundation\CodeGenerator\CodeGeneratorStringExtensions.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Foundation\CodeGenerator\ICodeGenerating.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Foundation\CohenSutherlandClipping.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Foundation\Color.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Foundation\Colors.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Foundation\Conrec.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Foundation\DataPoint.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Foundation\DataPointConverter.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Foundation\DoubleExtensions.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Foundation\FontWeights.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Foundation\FractionHelper.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Foundation\HorizontalAlignment.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Foundation\IDataPoint.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Foundation\IDataPointProvider.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Foundation\LineStyle.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Foundation\LineStyleHelper.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Foundation\ListFiller.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Foundation\MarkerType.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Foundation\OxyColor.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Foundation\OxyColorConverter.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Foundation\OxyColors.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Foundation\OxyImage.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Foundation\OxyPalette.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Foundation\OxyPalettes.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Foundation\OxyPen.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Foundation\OxyPenLineJoin.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Foundation\OxyRect.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Foundation\OxySize.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Foundation\OxyThickness.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Foundation\Pen.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Foundation\PlotLength.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Foundation\PlotLengthUnit.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Foundation\PngEncoder.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Foundation\Point.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Foundation\Rectangle.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Foundation\ReflectionHelper.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Foundation\ScreenPoint.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Foundation\ScreenPointHelper.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Foundation\ScreenVector.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Foundation\Size.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Foundation\StreamExtensions.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Foundation\StringHelper.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Foundation\SutherlandHodgmanClipping.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Foundation\VerticalAlignment.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Foundation\XmlWriterBase.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\LibraryDoc.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\LinqBridge.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Manipulators\CursorType.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Manipulators\IPlotControl.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Manipulators\ManipulationEventArgs.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Manipulators\ManipulatorBase.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Manipulators\PanManipulator.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Manipulators\ResetManipulator.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Manipulators\TrackerHitResult.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Manipulators\TrackerManipulator.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Manipulators\ZoomManipulator.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Manipulators\ZoomRectangleManipulator.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Manipulators\ZoomStepManipulator.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\MouseActions\MouseAction.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\MouseActions\SliderAction.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\NamespaceDoc.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\PlotModel\HitTestResult.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\PlotModel\OxyMouseButton.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\PlotModel\OxyMouseEventArgs.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\PlotModel\PlotElement.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\PlotModel\PlotModel.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\PlotModel\PlotModel.Legends.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\PlotModel\PlotModel.MouseEvents.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\PlotModel\PlotModel.Rendering.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\PlotModel\SelectablePlotElement.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\PlotModel\UIPlotElement.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Properties\AssemblyInfo.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Render\AngleAxisRenderer.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Render\AxisRenderer.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Render\AxisRendererBase.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Render\HorizontalAndVerticalAxisRenderer.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Render\IRenderContext.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Render\MagnitudeAxisRenderer.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Render\MathRenderingExtensions.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Render\PlotRenderer.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Render\RenderContextBase.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Render\RenderingExtensions.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Render\VerticalAxisRenderer.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Reporting\NamespaceDoc.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Reporting\ReportWriters\HtmlReportWriter.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Reporting\ReportWriters\IReportWriter.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Reporting\ReportWriters\StringExtensions.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Reporting\ReportWriters\TextReportWriter.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Reporting\ReportWriters\WikiReportWriter.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Reporting\Report\Content.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Reporting\Report\Drawing.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Reporting\Report\DrawingFigure.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Reporting\Report\Equation.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Reporting\Report\Figure.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Reporting\Report\Header.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Reporting\Report\HeaderHelper.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Reporting\Report\Image.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Reporting\Report\ItemsTable.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Reporting\Report\ItemsTableField.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Reporting\Report\Paragraph.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Reporting\Report\ParagraphStyle.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Reporting\Report\Plot.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Reporting\Report\PlotFigure.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Reporting\Report\PropertyTable.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Reporting\Report\Report.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Reporting\Report\ReportItem.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Reporting\Report\ReportSection.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Reporting\Report\ReportStyle.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Reporting\Report\Table.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Reporting\Report\TableColumn.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Reporting\Report\TableOfContents.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Series\AreaSeries.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Series\BarSeries\BarItem.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Series\BarSeries\BarItemBase.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Series\BarSeries\BarSeries.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Series\BarSeries\BarSeriesBase.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Series\BarSeries\BarSeriesBase{T}.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Series\BarSeries\CategorizedItem.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Series\BarSeries\CategorizedSeries.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Series\BarSeries\ColumnItem.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Series\BarSeries\ColumnSeries.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Series\BarSeries\ErrorColumnItem.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Series\BarSeries\ErrorColumnSeries.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Series\BarSeries\IntervalBarItem.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Series\BarSeries\IntervalBarSeries.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Series\BarSeries\IStackableSeries.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Series\BarSeries\LabelPlacement.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Series\BarSeries\RectangleBarItem.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Series\BarSeries\RectangleBarSeries.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Series\BarSeries\TornadoBarItem.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Series\BarSeries\TornadoBarSeries.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Series\BoxPlotItem.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Series\BoxPlotSeries.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Series\CandleStickSeries.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Series\ContourSeries.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Series\DataPointSeries.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Series\FunctionSeries.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Series\HeatMapSeries.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Series\HighLowItem.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Series\HighLowSeries.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Series\ItemsSeries.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Series\ITrackableSeries.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Series\LineLegendPosition.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Series\LineSeries.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Series\PieSeries.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Series\PieSlice.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Series\PlotSeriesBase.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Series\ScatterPoint.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Series\ScatterSeries.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Series\Series.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Series\StairStepSeries.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Series\StemSeries.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Series\TwoColorLineSeries.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Series\XYAxisSeries.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Svg\NativeMethods.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Svg\SvgExporter.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Svg\SvgRenderContext.cs" />
+    <Compile Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\Svg\SvgWriter.cs" />
+    <Compile Include="OpenHardwareMonitor\GUI\AboutBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OpenHardwareMonitor\GUI\AboutBox.Designer.cs">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OpenHardwareMonitor\GUI\CrashForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OpenHardwareMonitor\GUI\CrashForm.Designer.cs">
+      <DependentUpon>CrashForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OpenHardwareMonitor\GUI\Gadget.cs" />
+    <Compile Include="OpenHardwareMonitor\GUI\GadgetWindow.cs" />
+    <Compile Include="OpenHardwareMonitor\GUI\HardwareNode.cs" />
+    <Compile Include="OpenHardwareMonitor\GUI\HardwareTypeImage.cs" />
+    <Compile Include="OpenHardwareMonitor\GUI\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OpenHardwareMonitor\GUI\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OpenHardwareMonitor\GUI\Node.cs" />
+    <Compile Include="OpenHardwareMonitor\GUI\NotifyIconAdv.cs" />
+    <Compile Include="OpenHardwareMonitor\GUI\ParameterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OpenHardwareMonitor\GUI\ParameterForm.Designer.cs">
+      <DependentUpon>ParameterForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OpenHardwareMonitor\GUI\PlotPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OpenHardwareMonitor\GUI\PortForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OpenHardwareMonitor\GUI\PortForm.Designer.cs">
+      <DependentUpon>PortForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OpenHardwareMonitor\GUI\ReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OpenHardwareMonitor\GUI\ReportForm.Designer.cs">
+      <DependentUpon>ReportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OpenHardwareMonitor\GUI\SensorGadget.cs" />
+    <Compile Include="OpenHardwareMonitor\GUI\SensorNode.cs" />
+    <Compile Include="OpenHardwareMonitor\GUI\SensorNotifyIcon.cs" />
+    <Compile Include="OpenHardwareMonitor\GUI\ShowDesktop.cs" />
+    <Compile Include="OpenHardwareMonitor\GUI\SplitContainerAdv.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="OpenHardwareMonitor\GUI\StartupManager.cs" />
+    <Compile Include="OpenHardwareMonitor\GUI\SystemTray.cs" />
+    <Compile Include="OpenHardwareMonitor\GUI\TaskScheduler.cs" />
+    <Compile Include="OpenHardwareMonitor\GUI\TreeModel.cs" />
+    <Compile Include="OpenHardwareMonitor\GUI\TypeNode.cs" />
+    <Compile Include="OpenHardwareMonitor\GUI\UnitManager.cs" />
+    <Compile Include="OpenHardwareMonitor\GUI\UpdateVisitor.cs" />
+    <Compile Include="OpenHardwareMonitor\GUI\UserOption.cs" />
+    <Compile Include="OpenHardwareMonitor\GUI\UserRadioGroup.cs" />
+    <Compile Include="OpenHardwareMonitor\Hardware\ATI\ADL.cs" />
+    <Compile Include="OpenHardwareMonitor\Hardware\ATI\ATIGPU.cs" />
+    <Compile Include="OpenHardwareMonitor\Hardware\ATI\ATIGroup.cs" />
+    <Compile Include="OpenHardwareMonitor\Hardware\Computer.cs" />
+    <Compile Include="OpenHardwareMonitor\Hardware\Control.cs" />
+    <Compile Include="OpenHardwareMonitor\Hardware\CPU\AMD0FCPU.cs" />
+    <Compile Include="OpenHardwareMonitor\Hardware\CPU\AMD10CPU.cs" />
+    <Compile Include="OpenHardwareMonitor\Hardware\CPU\AMDCPU.cs" />
+    <Compile Include="OpenHardwareMonitor\Hardware\CPU\CPUGroup.cs" />
+    <Compile Include="OpenHardwareMonitor\Hardware\CPU\CPUID.cs" />
+    <Compile Include="OpenHardwareMonitor\Hardware\CPU\CPULoad.cs" />
+    <Compile Include="OpenHardwareMonitor\Hardware\CPU\GenericCPU.cs" />
+    <Compile Include="OpenHardwareMonitor\Hardware\CPU\IntelCPU.cs" />
+    <Compile Include="OpenHardwareMonitor\Hardware\FirmwareTable.cs" />
+    <Compile Include="OpenHardwareMonitor\Hardware\Hardware.cs" />
+    <Compile Include="OpenHardwareMonitor\Hardware\HDD\AbstractHarddrive.cs" />
+    <Compile Include="OpenHardwareMonitor\Hardware\HDD\DebugSmart.cs" />
+    <Compile Include="OpenHardwareMonitor\Hardware\HDD\DriveAttributeValue.cs" />
+    <Compile Include="OpenHardwareMonitor\Hardware\HDD\DriveThresholdValue.cs" />
+    <Compile Include="OpenHardwareMonitor\Hardware\HDD\HarddriveGroup.cs" />
+    <Compile Include="OpenHardwareMonitor\Hardware\HDD\HDDGeneric.cs" />
+    <Compile Include="OpenHardwareMonitor\Hardware\HDD\ISmart.cs" />
+    <Compile Include="OpenHardwareMonitor\Hardware\HDD\NamePrefixAttribute.cs" />
+    <Compile Include="OpenHardwareMonitor\Hardware\HDD\RequireSmartAttribute.cs" />
+    <Compile Include="OpenHardwareMonitor\Hardware\HDD\SmartAttribute.cs" />
+    <Compile Include="OpenHardwareMonitor\Hardware\HDD\SmartNames.cs" />
+    <Compile Include="OpenHardwareMonitor\Hardware\HDD\SSDIndilinx.cs" />
+    <Compile Include="OpenHardwareMonitor\Hardware\HDD\SSDIntel.cs" />
+    <Compile Include="OpenHardwareMonitor\Hardware\HDD\SSDMicron.cs" />
+    <Compile Include="OpenHardwareMonitor\Hardware\HDD\SSDPlextor.cs" />
+    <Compile Include="OpenHardwareMonitor\Hardware\HDD\SSDSamsung.cs" />
+    <Compile Include="OpenHardwareMonitor\Hardware\HDD\SSDSandforce.cs" />
+    <Compile Include="OpenHardwareMonitor\Hardware\HDD\WindowsSmart.cs" />
+    <Compile Include="OpenHardwareMonitor\Hardware\Heatmaster\Heatmaster.cs" />
+    <Compile Include="OpenHardwareMonitor\Hardware\Heatmaster\HeatmasterGroup.cs" />
+    <Compile Include="OpenHardwareMonitor\Hardware\HexStringArray.cs" />
+    <Compile Include="OpenHardwareMonitor\Hardware\IComputer.cs" />
+    <Compile Include="OpenHardwareMonitor\Hardware\IControl.cs" />
+    <Compile Include="OpenHardwareMonitor\Hardware\Identifier.cs" />
+    <Compile Include="OpenHardwareMonitor\Hardware\IElement.cs" />
+    <Compile Include="OpenHardwareMonitor\Hardware\IGroup.cs" />
+    <Compile Include="OpenHardwareMonitor\Hardware\IHardware.cs" />
+    <Compile Include="OpenHardwareMonitor\Hardware\IOControlCode.cs" />
+    <Compile Include="OpenHardwareMonitor\Hardware\IParameter.cs" />
+    <Compile Include="OpenHardwareMonitor\Hardware\ISensor.cs" />
+    <Compile Include="OpenHardwareMonitor\Hardware\ISettings.cs" />
+    <Compile Include="OpenHardwareMonitor\Hardware\IVisitor.cs" />
+    <Compile Include="OpenHardwareMonitor\Hardware\KernelDriver.cs" />
+    <Compile Include="OpenHardwareMonitor\Hardware\LPC\Chip.cs" />
+    <Compile Include="OpenHardwareMonitor\Hardware\LPC\F718XX.cs" />
+    <Compile Include="OpenHardwareMonitor\Hardware\LPC\ISuperIO.cs" />
+    <Compile Include="OpenHardwareMonitor\Hardware\LPC\IT87XX.cs" />
+    <Compile Include="OpenHardwareMonitor\Hardware\LPC\LMSensors.cs" />
+    <Compile Include="OpenHardwareMonitor\Hardware\LPC\LPCIO.cs" />
+    <Compile Include="OpenHardwareMonitor\Hardware\LPC\LPCPort.cs" />
+    <Compile Include="OpenHardwareMonitor\Hardware\LPC\NCT677X.cs" />
+    <Compile Include="OpenHardwareMonitor\Hardware\LPC\W836XX.cs" />
+    <Compile Include="OpenHardwareMonitor\Hardware\Mainboard\GigabyteTAMG.cs" />
+    <Compile Include="OpenHardwareMonitor\Hardware\Mainboard\Identification.cs" />
+    <Compile Include="OpenHardwareMonitor\Hardware\Mainboard\Mainboard.cs" />
+    <Compile Include="OpenHardwareMonitor\Hardware\Mainboard\MainboardGroup.cs" />
+    <Compile Include="OpenHardwareMonitor\Hardware\Mainboard\Manufacturer.cs" />
+    <Compile Include="OpenHardwareMonitor\Hardware\Mainboard\Model.cs" />
+    <Compile Include="OpenHardwareMonitor\Hardware\Mainboard\SuperIOHardware.cs" />
+    <Compile Include="OpenHardwareMonitor\Hardware\Nvidia\NVAPI.cs" />
+    <Compile Include="OpenHardwareMonitor\Hardware\Nvidia\NvidiaGPU.cs" />
+    <Compile Include="OpenHardwareMonitor\Hardware\Nvidia\NvidiaGroup.cs" />
+    <Compile Include="OpenHardwareMonitor\Hardware\Opcode.cs" />
+    <Compile Include="OpenHardwareMonitor\Hardware\OperatingSystem.cs" />
+    <Compile Include="OpenHardwareMonitor\Hardware\Parameter.cs" />
+    <Compile Include="OpenHardwareMonitor\Hardware\PInvokeDelegateFactory.cs" />
+    <Compile Include="OpenHardwareMonitor\Hardware\RAM\GenericRAM.cs" />
+    <Compile Include="OpenHardwareMonitor\Hardware\RAM\RAMGroup.cs" />
+    <Compile Include="OpenHardwareMonitor\Hardware\Ring0.cs" />
+    <Compile Include="OpenHardwareMonitor\Hardware\Sensor.cs" />
+    <Compile Include="OpenHardwareMonitor\Hardware\SensorVisitor.cs" />
+    <Compile Include="OpenHardwareMonitor\Hardware\SMBIOS.cs" />
+    <Compile Include="OpenHardwareMonitor\Hardware\TBalancer\FTD2XX.cs" />
+    <Compile Include="OpenHardwareMonitor\Hardware\TBalancer\TBalancer.cs" />
+    <Compile Include="OpenHardwareMonitor\Hardware\TBalancer\TBalancerGroup.cs" />
+    <Compile Include="OpenHardwareMonitor\Hardware\ThreadAffinity.cs" />
+    <Compile Include="OpenHardwareMonitor\Program.cs" />
+    <Compile Include="OpenHardwareMonitor\Properties\AssemblyInfo.cs" />
+    <Compile Include="OpenHardwareMonitor\Properties\AssemblyLibInfo.cs" />
+    <Compile Include="OpenHardwareMonitor\Properties\AssemblyVersion.cs" />
+    <Compile Include="OpenHardwareMonitor\Utilities\EmbeddedResources.cs" />
+    <Compile Include="OpenHardwareMonitor\Utilities\HttpServer.cs" />
+    <Compile Include="OpenHardwareMonitor\Utilities\IconFactory.cs" />
+    <Compile Include="OpenHardwareMonitor\Utilities\Logger.cs" />
+    <Compile Include="OpenHardwareMonitor\Utilities\PersistentSettings.cs" />
+    <Compile Include="OpenHardwareMonitor\WMI\Hardware.cs" />
+    <Compile Include="OpenHardwareMonitor\WMI\IWmiObject.cs" />
+    <Compile Include="OpenHardwareMonitor\WMI\Sensor.cs" />
+    <Compile Include="OpenHardwareMonitor\WMI\WmiProvider.cs" />
     <Compile Include="Tools.cs" />
     <Compile Include="ResponseBuilder.cs" />
     <Compile Include="HardwareUsage.cs" />
@@ -81,13 +571,147 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="app.manifest" />
+    <None Include="OpenHardwareMonitor\.vs\OpenHardwareMonitor\DesignTimeBuild\.dtbcache" />
+    <None Include="OpenHardwareMonitor\.vs\OpenHardwareMonitor\v15\Server\sqlite3\storage.ide" />
+    <None Include="OpenHardwareMonitor\.vs\OpenHardwareMonitor\v15\Server\sqlite3\storage.ide-shm" />
+    <None Include="OpenHardwareMonitor\.vs\OpenHardwareMonitor\v15\Server\sqlite3\storage.ide-wal" />
+    <None Include="OpenHardwareMonitor\App.config" />
+    <None Include="OpenHardwareMonitor\External\Aga.Controls\obj\Debug\Aga.Controls.csproj.CoreCompileInputs.cache" />
+    <None Include="OpenHardwareMonitor\External\Aga.Controls\obj\Debug\Aga.Controls.csprojAssemblyReference.cache" />
+    <None Include="OpenHardwareMonitor\External\Aga.Controls\obj\Release\Aga.Controls.csproj.CoreCompileInputs.cache" />
+    <None Include="OpenHardwareMonitor\External\Aga.Controls\Resources\loading_icon" />
+    <None Include="OpenHardwareMonitor\External\Aga.Controls\Tree\ClassDiagram.cd" />
+    <None Include="OpenHardwareMonitor\External\Aga.Controls\Tree\NodeControls\ClassDiagram.cd" />
+    <None Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot.WindowsForms\obj\Debug\NET40\OxyPlot.WindowsForms.csproj.CoreCompileInputs.cache" />
+    <None Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot.WindowsForms\obj\Release\NET40\OxyPlot.WindowsForms.csproj.CoreCompileInputs.cache" />
+    <None Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot.WindowsForms\obj\Release\NET40\OxyPlot.WindowsForms.csprojAssemblyReference.cache" />
+    <None Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\ClassDiagrams\PlotModel.cd" />
+    <None Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\ClassDiagrams\Reporting.cd" />
+    <None Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\ClassDiagrams\Series.cd" />
+    <None Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\obj\Debug\OxyPlot.csproj.CoreCompileInputs.cache" />
+    <None Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\obj\Debug\OxyPlot.csprojAssemblyReference.cache" />
+    <None Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\obj\Release\OxyPlot.csproj.CoreCompileInputs.cache" />
+    <None Include="OpenHardwareMonitor\External\WinRing0\MAKEFILE" />
+    <None Include="OpenHardwareMonitor\External\WinRing0\SOURCES" />
+    <None Include="OpenHardwareMonitor\Hardware\WinRing0.sys" />
+    <None Include="OpenHardwareMonitor\Hardware\WinRing0x64.sys" />
+    <None Include="OpenHardwareMonitor\Resources\app.manifest" />
+    <None Include="OpenHardwareMonitor\Resources\gadget.xcf" />
+    <None Include="OpenHardwareMonitor\Resources\icon.xcf" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="icon.ico" />
+    <Content Include="OpenHardwareMonitor\.gitignore" />
+    <Content Include="OpenHardwareMonitor\External\Aga.Controls\Aga.Controls.csproj" />
+    <Content Include="OpenHardwareMonitor\External\Aga.Controls\Aga.Controls.sln" />
+    <Content Include="OpenHardwareMonitor\External\Aga.Controls\license.txt" />
+    <Content Include="OpenHardwareMonitor\External\Aga.Controls\Resources\check.bmp" />
+    <Content Include="OpenHardwareMonitor\External\Aga.Controls\Resources\DVSplit.cur" />
+    <Content Include="OpenHardwareMonitor\External\Aga.Controls\Resources\Folder.bmp" />
+    <Content Include="OpenHardwareMonitor\External\Aga.Controls\Resources\FolderClosed.bmp" />
+    <Content Include="OpenHardwareMonitor\External\Aga.Controls\Resources\Leaf.bmp" />
+    <Content Include="OpenHardwareMonitor\External\Aga.Controls\Resources\minus.bmp" />
+    <Content Include="OpenHardwareMonitor\External\Aga.Controls\Resources\plus.bmp" />
+    <Content Include="OpenHardwareMonitor\External\Aga.Controls\Resources\uncheck.bmp" />
+    <Content Include="OpenHardwareMonitor\External\Aga.Controls\Resources\unknown.bmp" />
+    <Content Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot.sln" />
+    <Content Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot.WindowsForms\OxyPlot.WindowsForms.csproj" />
+    <Content Include="OpenHardwareMonitor\External\OxyPlot\OxyPlot\OxyPlot.csproj" />
+    <Content Include="OpenHardwareMonitor\External\WinRing0\COPYRIGHT.txt" />
+    <Content Include="OpenHardwareMonitor\External\WinRing0\OlsIoctl.h" />
+    <Content Include="OpenHardwareMonitor\External\WinRing0\OpenLibSys.c" />
+    <Content Include="OpenHardwareMonitor\External\WinRing0\OpenLibSys.h" />
+    <Content Include="OpenHardwareMonitor\External\WinRing0\OpenLibSys.rc" />
+    <Content Include="OpenHardwareMonitor\Licenses\License.html" />
+    <Content Include="OpenHardwareMonitor\OpenHardwareMonitor.csproj" />
+    <Content Include="OpenHardwareMonitor\OpenHardwareMonitor.sln" />
+    <Content Include="OpenHardwareMonitor\OpenHardwareMonitorLib.csproj" />
+    <Content Include="OpenHardwareMonitor\Resources\ati.png" />
+    <Content Include="OpenHardwareMonitor\Resources\barback.png" />
+    <Content Include="OpenHardwareMonitor\Resources\barblue.png" />
+    <Content Include="OpenHardwareMonitor\Resources\bigng.png" />
+    <Content Include="OpenHardwareMonitor\Resources\chip.png" />
+    <Content Include="OpenHardwareMonitor\Resources\clock.png" />
+    <Content Include="OpenHardwareMonitor\Resources\computer.png" />
+    <Content Include="OpenHardwareMonitor\Resources\control.png" />
+    <Content Include="OpenHardwareMonitor\Resources\cpu.png" />
+    <Content Include="OpenHardwareMonitor\Resources\data.png" />
+    <Content Include="OpenHardwareMonitor\Resources\factor.png" />
+    <Content Include="OpenHardwareMonitor\Resources\fan.png" />
+    <Content Include="OpenHardwareMonitor\Resources\flow.png" />
+    <Content Include="OpenHardwareMonitor\Resources\gadget.png" />
+    <Content Include="OpenHardwareMonitor\Resources\hdd.png" />
+    <Content Include="OpenHardwareMonitor\Resources\icon.ico" />
+    <Content Include="OpenHardwareMonitor\Resources\level.png" />
+    <Content Include="OpenHardwareMonitor\Resources\load.png" />
+    <Content Include="OpenHardwareMonitor\Resources\mainboard.png" />
+    <Content Include="OpenHardwareMonitor\Resources\nvidia.png" />
+    <Content Include="OpenHardwareMonitor\Resources\power.png" />
+    <Content Include="OpenHardwareMonitor\Resources\ram.png" />
+    <Content Include="OpenHardwareMonitor\Resources\smallicon.ico" />
+    <Content Include="OpenHardwareMonitor\Resources\temperature.png" />
+    <Content Include="OpenHardwareMonitor\Resources\voltage.png" />
+    <Content Include="OpenHardwareMonitor\Resources\Web\css\custom-theme\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="OpenHardwareMonitor\Resources\Web\css\custom-theme\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="OpenHardwareMonitor\Resources\Web\css\custom-theme\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="OpenHardwareMonitor\Resources\Web\css\custom-theme\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="OpenHardwareMonitor\Resources\Web\css\custom-theme\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="OpenHardwareMonitor\Resources\Web\css\custom-theme\images\ui-bg_glass_75_ffffff_1x400.png" />
+    <Content Include="OpenHardwareMonitor\Resources\Web\css\custom-theme\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="OpenHardwareMonitor\Resources\Web\css\custom-theme\images\ui-bg_inset-soft_95_fef1ec_1x100.png" />
+    <Content Include="OpenHardwareMonitor\Resources\Web\css\custom-theme\images\ui-icons_222222_256x240.png" />
+    <Content Include="OpenHardwareMonitor\Resources\Web\css\custom-theme\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="OpenHardwareMonitor\Resources\Web\css\custom-theme\images\ui-icons_454545_256x240.png" />
+    <Content Include="OpenHardwareMonitor\Resources\Web\css\custom-theme\images\ui-icons_888888_256x240.png" />
+    <Content Include="OpenHardwareMonitor\Resources\Web\css\custom-theme\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="OpenHardwareMonitor\Resources\Web\css\custom-theme\jquery-ui-1.8.16.custom.css" />
+    <Content Include="OpenHardwareMonitor\Resources\Web\css\jquery.treeTable.css" />
+    <Content Include="OpenHardwareMonitor\Resources\Web\css\ohm_web.css" />
+    <Content Include="OpenHardwareMonitor\Resources\Web\images\toggle-collapse-dark.png" />
+    <Content Include="OpenHardwareMonitor\Resources\Web\images\toggle-collapse-light.png" />
+    <Content Include="OpenHardwareMonitor\Resources\Web\images\toggle-expand-dark.png" />
+    <Content Include="OpenHardwareMonitor\Resources\Web\images\toggle-expand-light.png" />
+    <Content Include="OpenHardwareMonitor\Resources\Web\images\transparent.png" />
+    <Content Include="OpenHardwareMonitor\Resources\Web\index.html" />
+    <Content Include="OpenHardwareMonitor\Resources\Web\js\jquery-1.7.2.js" />
+    <Content Include="OpenHardwareMonitor\Resources\Web\js\jquery-1.7.2.min.js" />
+    <Content Include="OpenHardwareMonitor\Resources\Web\js\jquery-ui-1.8.16.custom.min.js" />
+    <Content Include="OpenHardwareMonitor\Resources\Web\js\jquery.tmpl.js" />
+    <Content Include="OpenHardwareMonitor\Resources\Web\js\jquery.tmpl.min.js" />
+    <Content Include="OpenHardwareMonitor\Resources\Web\js\jquery.treeTable.min.js" />
+    <Content Include="OpenHardwareMonitor\Resources\Web\js\knockout-2.1.0.js" />
+    <Content Include="OpenHardwareMonitor\Resources\Web\js\knockout-2.1.0.min.js" />
+    <Content Include="OpenHardwareMonitor\Resources\Web\js\knockout.mapping-latest.js" />
+    <Content Include="OpenHardwareMonitor\Resources\Web\js\knockout.mapping-latest.min.js" />
+    <Content Include="OpenHardwareMonitor\Resources\Web\js\ohm_web.js" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="OpenHardwareMonitor\External\Aga.Controls\Properties\Resources.resx" />
+    <EmbeddedResource Include="OpenHardwareMonitor\External\Aga.Controls\Tree\TreeViewAdv.resx">
+      <DependentUpon>TreeViewAdv.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OpenHardwareMonitor\GUI\AboutBox.resx">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OpenHardwareMonitor\GUI\CrashForm.resx">
+      <DependentUpon>CrashForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OpenHardwareMonitor\GUI\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OpenHardwareMonitor\GUI\ParameterForm.resx">
+      <DependentUpon>ParameterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OpenHardwareMonitor\GUI\PortForm.resx">
+      <DependentUpon>PortForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OpenHardwareMonitor\GUI\ReportForm.resx">
+      <DependentUpon>ReportForm.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

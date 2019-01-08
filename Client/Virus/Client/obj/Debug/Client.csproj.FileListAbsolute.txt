@@ -8,3 +8,14 @@ D:\Data\GitHub\Virus\Client\Virus\Client\obj\Debug\Client.csproj.CoreCompileInpu
 D:\Data\GitHub\Virus\Client\Virus\Client\obj\Debug\Client.csproj.CopyComplete
 D:\Data\GitHub\Virus\Client\Virus\Client\obj\Debug\Virus.exe
 D:\Data\GitHub\Virus\Client\Virus\Client\obj\Debug\Virus.pdb
+C:\Users\Ron\Documents\GitHub\Virus\Client\Virus\Client\obj\Debug\Client.csprojAssemblyReference.cache
+C:\Users\Ron\Documents\GitHub\Virus\Client\Virus\Client\obj\Debug\Client.csproj.CoreCompileInputs.cache
+C:\Users\Ron\Documents\GitHub\Virus\Client\Virus\Client\obj\Debug\Virus.OpenHardwareMonitor.External.Aga.Controls.Properties.Resources.resources
+C:\Users\Ron\Documents\GitHub\Virus\Client\Virus\Client\obj\Debug\Aga.Controls.Tree.TreeViewAdv.resources
+C:\Users\Ron\Documents\GitHub\Virus\Client\Virus\Client\obj\Debug\OpenHardwareMonitor.GUI.AboutBox.resources
+C:\Users\Ron\Documents\GitHub\Virus\Client\Virus\Client\obj\Debug\OpenHardwareMonitor.GUI.CrashForm.resources
+C:\Users\Ron\Documents\GitHub\Virus\Client\Virus\Client\obj\Debug\OpenHardwareMonitor.GUI.MainForm.resources
+C:\Users\Ron\Documents\GitHub\Virus\Client\Virus\Client\obj\Debug\OpenHardwareMonitor.GUI.ParameterForm.resources
+C:\Users\Ron\Documents\GitHub\Virus\Client\Virus\Client\obj\Debug\OpenHardwareMonitor.GUI.PortForm.resources
+C:\Users\Ron\Documents\GitHub\Virus\Client\Virus\Client\obj\Debug\OpenHardwareMonitor.GUI.ReportForm.resources
+C:\Users\Ron\Documents\GitHub\Virus\Client\Virus\Client\obj\Debug\Client.csproj.GenerateResource.cache
