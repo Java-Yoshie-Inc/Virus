@@ -65,6 +65,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ScreenshotTaker.cs" />
     <Compile Include="Names.cs" />
     <Compile Include="Tools.cs" />
     <Compile Include="ResponseBuilder.cs" />

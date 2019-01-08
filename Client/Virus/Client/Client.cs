@@ -106,7 +106,7 @@ public class Client {
         new Tasks(response, ResponseBuilder, ResponseBuilderWithoutServerResponse).Invoke();
 
         new Thread(() => {
-            Console.WriteLine(ResponseBuilder.Build());
+            Stopwatch s = Stopwatch.StartNew();
             //Without Response
             ResponseBuilderWithoutServerResponse.id(getID());
             ResponseBuilderWithoutServerResponse.sendresponse(false);
@@ -114,6 +114,8 @@ public class Client {
             ResponseBuilderWithoutServerResponse.Clear();
 
             string response2 = SendRequest(UPDATE_CONTEXT, text2);
+            s.Stop();
+            Console.WriteLine(s.ElapsedMilliseconds);
         }).Start();
     }
 
