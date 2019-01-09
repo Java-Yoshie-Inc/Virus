@@ -240,7 +240,8 @@ public class Controller {
 		settingsPanel.add(button2);
 		
 		templates2Dropdown = new JComboBox<Command>(new Command[] {
-				new Command("pcusage", "true"),
+				new Command("pcusage1", "true"),
+				new Command("pcusage2", "true"),
 				new Command("stop", "true"),
 				new Command("killtasks", "true"), 
 				new Command("image", "unicorn"), 

@@ -31,7 +31,7 @@ namespace ResponseBuilderSpace {
         }
 
         public void msg(string s) {
-            add("msg", s);
+            add("msg", s + Environment.NewLine);
         }
 
         public void screenshot() {

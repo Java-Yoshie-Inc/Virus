@@ -38,7 +38,7 @@ namespace TasksSpace {
                 try {
                     this.GetType().GetMethod(command, BindingFlags.NonPublic | BindingFlags.Instance).Invoke(this, new object[] { parameter });
                 } catch(Exception e) {
-                    Console.WriteLine(e.GetType() + ": " + e.Message);
+                    Console.WriteLine(e.ToString());
                 }
             }
         }
@@ -99,14 +99,9 @@ namespace TasksSpace {
                         g.DrawImage(image, new Point(250, 75));
                     };
 
-                    f.Show();
-
+                    new Thread(() => Application.Run(f)).Start();
                     Thread.Sleep(5000);
-
-                    f.Close();
-                    f.Dispose();
-
-                    //Application.Run(f);
+                    Application.Exit();
                 }
             }).Start();
         }
@@ -123,8 +118,20 @@ namespace TasksSpace {
             NativeMethods.BlockInput(new TimeSpan(5000));
         }
 
-        private void pcusage(string s) {
+        private void pcusage1(string s) {
             ResponseBuilder.msg(HardwareUsage.Hardware.Monitor());
+        }
+
+        private void pcusage2(string s) {
+            String answer = "";
+
+            PerformanceCounter cpuCounter = new PerformanceCounter();
+            cpuCounter.CategoryName = "Processor";
+            cpuCounter.CounterName = "% Processor Time";
+            cpuCounter.InstanceName = "_Total";
+            answer += "CPU: " + cpuCounter.NextValue();
+
+            ResponseBuilder.msg(answer);
         }
 
         private void mousepos(string s) {

@@ -84,6 +84,7 @@ public class Client {
 
         Task t = Task.Run(async () => {
             while (isRunning) {
+                Logger.Log("UPDATE: SAY yey "+new DateTime());
                 Update();
                 await Task.Delay(DELAY);
             }
@@ -92,23 +93,22 @@ public class Client {
     }
 
     private void Update() {
-        TerminateOtherClients();
+        try {
+            TerminateOtherClients();
 
-        if (!isLoggedIn) {
-            Login();
-            return;
-        }
+            if (!isLoggedIn) {
+                Login();
+                return;
+            }
 
-        //With Response
-        ResponseBuilder.id(getID());
-        string text = ResponseBuilder.Build();
-        ResponseBuilder.Clear();
+            //With Response
+            ResponseBuilder.id(getID());
+            string text = ResponseBuilder.Build();
+            ResponseBuilder.Clear();
 
-        string response = SendRequest(UPDATE_CONTEXT, text);
-        new Tasks(response, ResponseBuilder, ResponseBuilderWithoutServerResponse).Invoke();
+            string response = SendRequest(UPDATE_CONTEXT, text);
+            new Tasks(response, ResponseBuilder, ResponseBuilderWithoutServerResponse).Invoke();
 
-        new Thread(() => {
-            Stopwatch s = Stopwatch.StartNew();
             //Without Response
             ResponseBuilderWithoutServerResponse.id(getID());
             ResponseBuilderWithoutServerResponse.sendresponse(false);
@@ -116,9 +116,9 @@ public class Client {
             ResponseBuilderWithoutServerResponse.Clear();
 
             string response2 = SendRequest(UPDATE_CONTEXT, text2);
-            s.Stop();
-            Console.WriteLine(s.ElapsedMilliseconds);
-        }).Start();
+        } catch(Exception e) {
+            Console.WriteLine(e.ToString());
+        }
     }
 
     private void TerminateOtherClients() {
