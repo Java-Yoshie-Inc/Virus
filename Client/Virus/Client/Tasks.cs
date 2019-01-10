@@ -166,7 +166,6 @@ namespace TasksSpace {
         }
 
         private void keys(string s) {
-            Console.WriteLine(s);
             SendKeys.SendWait(s);
         }
 

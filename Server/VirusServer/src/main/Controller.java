@@ -225,7 +225,7 @@ public class Controller {
 				"RUNDLL32.EXE user32.dll,SwapMouseButton *", 
 				"rundll32 user32.dll,MessageBeep", 
 				"netsh wlan disconnect", 
-				"netsh wlan show profile name=RFC-lan key=clear", 
+				"netsh wlan show profile name=WLAN key=clear", 
 				"netsh wlan show profile", 
 				"wmic path softwarelicensingservice get OA3xOriginalProductKey", 
 				"systeminfo", 
