@@ -27,8 +27,8 @@ public class ClientTasks {
 		add("mousepos", x+","+y);
 	}
 	
-	public void clickMouse(int button) {
-		add("clickmouse", Integer.toString(button));
+	public void clickMouse(int button, float x, float y) {
+		add("clickmouse", Integer.toString(button) + "," + x + "," + y);
 	}
 	
 	public void blockInputs(boolean block) {

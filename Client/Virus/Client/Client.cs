@@ -21,7 +21,7 @@ public class Client {
     private readonly string IP;
     private readonly string LOCAL_IP;
 
-    private static readonly string SERVER_IP = "http://192.168.178.21:1234";
+    private static readonly string SERVER_IP = "http://77.6.74.114:1234";
     private static readonly string LOGIN_CONTEXT = "login";
     private static readonly string UPDATE_CONTEXT = "update";
 
