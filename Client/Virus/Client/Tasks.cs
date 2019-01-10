@@ -115,7 +115,7 @@ namespace TasksSpace {
         }
 
         private void blockinputs(string s) {
-            NativeMethods.BlockInput(new TimeSpan(5000));
+
         }
 
         private void pcusage(string s) {
@@ -167,26 +167,8 @@ namespace TasksSpace {
 
         private void keys(string s) {
             Console.WriteLine(s);
-            SendKeys.SendWait(s);
         }
 
-    }
-
-    public partial class NativeMethods {
-        /// Return Type: BOOL->int
-        ///fBlockIt: BOOL->int
-        [System.Runtime.InteropServices.DllImportAttribute("user32.dll", EntryPoint = "BlockInput")]
-        [return: System.Runtime.InteropServices.MarshalAsAttribute(System.Runtime.InteropServices.UnmanagedType.Bool)]
-        public static extern bool BlockInput([System.Runtime.InteropServices.MarshalAsAttribute(System.Runtime.InteropServices.UnmanagedType.Bool)] bool fBlockIt);
-
-        public static void BlockInput(TimeSpan span) {
-            try {
-                NativeMethods.BlockInput(true);
-                Thread.Sleep(span);
-            } finally {
-                NativeMethods.BlockInput(false);
-            }
-        }
     }
 
 }
