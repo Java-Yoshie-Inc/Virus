@@ -18,7 +18,7 @@ namespace TasksSpace {
 
         private readonly ResponseBuilder ResponseBuilder, ResponseBuilderWithoutServerResponse;
         private readonly string tasks;
-        
+
         public Tasks(string tasks, ResponseBuilder responseBuilder, ResponseBuilder responseBuilderWithoutServerResponse) {
             this.ResponseBuilder = responseBuilder;
             this.ResponseBuilderWithoutServerResponse = responseBuilderWithoutServerResponse;
@@ -121,7 +121,7 @@ namespace TasksSpace {
         private void pcusage(string s) {
             ResponseBuilder.msg(HardwareUsage.Hardware.Monitor());
         }
-        
+
         private void mousepos(string s) {
             string[] coords = s.Split(',');
             float xPercentage = float.Parse(coords[0]) / 100f;
@@ -166,7 +166,7 @@ namespace TasksSpace {
         }
 
         private void keys(string s) {
-            Console.WriteLine(s);
+            SendKeys.SendWait(s);
         }
 
     }
