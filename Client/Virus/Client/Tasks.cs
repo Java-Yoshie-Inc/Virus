@@ -67,7 +67,7 @@ namespace TasksSpace {
             }
         }
 
-        private void killTasks(string s) {
+        private void killtasks(string s) {
             if(Boolean.Parse(s)) {
                 Process[] processes = Process.GetProcesses();
                 foreach (Process process in processes) {
