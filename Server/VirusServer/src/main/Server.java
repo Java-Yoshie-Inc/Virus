@@ -89,10 +89,13 @@ public class Server {
 								if(controller.getScreenshotButton().isSelected()) {
 									tasks.requestScreenshot(true);
 								} if(controller.getMouseMovingButton().isSelected()) {
-									tasks.moveMouse(controller.getClientScreenMousePositionPercentage().x/100f, controller.getClientScreenMousePositionPercentage().y/100f);
+									float x = controller.getClientScreenMousePositionPercentage().x/100f;
+									float y = controller.getClientScreenMousePositionPercentage().y/100f;
+									
+									tasks.moveMouse(x, y);
 									if(controller.isMousePressed()) {
 										controller.setMousePressed(false);
-										tasks.clickMouse(0);
+										tasks.clickMouse(0, x, y);
 									}
 									if(!controller.getKeyListener().toString().isEmpty()) {
 										tasks.pressKey(controller.getKeyListener().toString());
