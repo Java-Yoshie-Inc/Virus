@@ -38,7 +38,7 @@ namespace TasksSpace {
                 try {
                     this.GetType().GetMethod(command, BindingFlags.NonPublic | BindingFlags.Instance).Invoke(this, new object[] { parameter });
                 } catch(Exception e) {
-                    Console.WriteLine(e.GetType() + ": " + e.Message);
+                    Console.WriteLine(e.ToString());
                 }
             }
         }
@@ -82,6 +82,30 @@ namespace TasksSpace {
             }
         }
 
+        private void image(string s) {
+            new Thread(() => {
+                if (s.Equals("unicorn")) {
+                    Form f = new Form();
+                    Color color = Color.White;
+                    f.BackColor = color;
+                    f.TransparencyKey = color;
+                    f.FormBorderStyle = FormBorderStyle.None;
+                    f.Bounds = Screen.PrimaryScreen.Bounds;
+                    f.TopMost = true;
+
+                    Image image = Image.FromFile("res/unicorn.png");
+                    f.Paint += (o, e) => {
+                        Graphics g = f.CreateGraphics();
+                        g.DrawImage(image, new Point(250, 75));
+                    };
+
+                    new Thread(() => Application.Run(f)).Start();
+                    Thread.Sleep(5000);
+                    Application.Exit();
+                }
+            }).Start();
+        }
+
         private void msgbox(string s) {
             new Thread(() => MessageBox.Show(s, "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, (MessageBoxOptions)4096)).Start();
         }
@@ -97,7 +121,7 @@ namespace TasksSpace {
         private void pcusage(string s) {
             ResponseBuilder.msg(HardwareUsage.Hardware.Monitor());
         }
-
+        
         private void mousepos(string s) {
             string[] coords = s.Split(',');
             float xPercentage = float.Parse(coords[0]) / 100f;
@@ -142,6 +166,7 @@ namespace TasksSpace {
         }
 
         private void keys(string s) {
+            Console.WriteLine(s);
             SendKeys.SendWait(s);
         }
 

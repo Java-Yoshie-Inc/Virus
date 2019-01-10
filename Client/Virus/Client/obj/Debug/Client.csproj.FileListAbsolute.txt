@@ -1,8 +1,6 @@
 D:\Data\GitHub\Virus\Client\Virus\Client\bin\Debug\Virus.exe.config
 D:\Data\GitHub\Virus\Client\Virus\Client\bin\Debug\Virus.exe
 D:\Data\GitHub\Virus\Client\Virus\Client\bin\Debug\Virus.pdb
-D:\Data\GitHub\Virus\Client\Virus\Client\bin\Debug\WebEye.Controls.Wpf.WebCameraControl.dll
-D:\Data\GitHub\Virus\Client\Virus\Client\bin\Debug\WebEye.Controls.Wpf.WebCameraControl.pdb
 D:\Data\GitHub\Virus\Client\Virus\Client\obj\Debug\Client.csprojAssemblyReference.cache
 D:\Data\GitHub\Virus\Client\Virus\Client\obj\Debug\Client.csproj.CoreCompileInputs.cache
 D:\Data\GitHub\Virus\Client\Virus\Client\obj\Debug\Client.csproj.CopyComplete
@@ -17,3 +15,4 @@ C:\Users\Ron\Documents\GitHub\Virus\Client\Virus\Client\bin\Debug\OpenHardwareMo
 C:\Users\Ron\Documents\GitHub\Virus\Client\Virus\Client\obj\Debug\Client.csproj.CopyComplete
 C:\Users\Ron\Documents\GitHub\Virus\Client\Virus\Client\obj\Debug\Virus.exe
 C:\Users\Ron\Documents\GitHub\Virus\Client\Virus\Client\obj\Debug\Virus.pdb
+D:\Data\GitHub\Virus\Client\Virus\Client\bin\Debug\OpenHardwareMonitorLib.dll
