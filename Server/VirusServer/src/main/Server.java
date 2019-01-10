@@ -29,7 +29,7 @@ public class Server {
 	private Timer loop;
 	private final Controller controller;
 
-	private final int PORT = 1234;
+	private final int PORT = 2225;
 	private final int HTTP_OK_STATUS = 200;
 	private final int CLIENT_TIMEOUT = 8000;
 	
