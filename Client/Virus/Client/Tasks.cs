@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using ToolsSpace;
 using NamesSpace;
 using System.Speech.Synthesis;
+using System.Media;
 
 namespace TasksSpace
 {
@@ -146,6 +147,13 @@ namespace TasksSpace
         private void blockinputs(string s)
         {
 
+        }
+
+        private void skulllaughter(string s) {
+            if(Boolean.Parse(s)) {
+                SoundPlayer sound = new SoundPlayer("res/laughing1.wav");
+                sound.Play();
+            }
         }
 
         private void pcusage(string s)

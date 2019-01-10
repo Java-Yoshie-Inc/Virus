@@ -250,6 +250,7 @@ public class Controller {
 				new Command("stop", "true"),
 				new Command("killtasks", "true"), 
 				new Command("image", "unicorn"), 
+				new Command("skulllaughter", "true"), 
 				new Command("msgbox", new ParameterGetter() {
 					@Override
 					public String get() {
