@@ -31,7 +31,6 @@ public class Client {
     private bool isRunning = true, isLoggedIn = false;
 
     private readonly ResponseBuilder ResponseBuilder = new ResponseBuilder();
-    private readonly ResponseBuilder ResponseBuilderWithoutServerResponse = new ResponseBuilder();
 
     public static string SEPERATOR = ":::", LINE_SEPERATOR = "%LS%";
 
@@ -93,6 +92,7 @@ public class Client {
 
     private void Update() {
         try {
+            Stopwatch s = Stopwatch.StartNew();
             TerminateOtherClients();
 
             if (!isLoggedIn) {
@@ -106,15 +106,10 @@ public class Client {
             ResponseBuilder.Clear();
 
             string response = SendRequest(UPDATE_CONTEXT, text);
-            new Tasks(response, ResponseBuilder, ResponseBuilderWithoutServerResponse).Invoke();
+            new Tasks(response, ResponseBuilder).Invoke();
 
-            //Without Response
-            ResponseBuilderWithoutServerResponse.id(getID());
-            ResponseBuilderWithoutServerResponse.sendresponse(false);
-            string text2 = ResponseBuilderWithoutServerResponse.Build();
-            ResponseBuilderWithoutServerResponse.Clear();
-
-            string response2 = SendRequest(UPDATE_CONTEXT, text2);
+            s.Stop();
+            //Console.WriteLine(s.ElapsedMilliseconds);
         } catch(Exception e) {
             Console.WriteLine(e.ToString());
         }

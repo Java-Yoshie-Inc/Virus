@@ -16,7 +16,7 @@ namespace ToolsSpace {
         }
 
         public static Bitmap TakeScreenshot() {
-            Bitmap image = ScaleImage(new Bitmap(Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height), 1);
+            Bitmap image = new Bitmap(Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height);
             Graphics screenshotGraphics = Graphics.FromImage(image);
             screenshotGraphics.CopyFromScreen(0, 0, 0, 0, new Size(image.Width, image.Height));
             screenshotGraphics.Flush();

