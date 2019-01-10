@@ -16,3 +16,12 @@ C:\Users\Ron\Documents\GitHub\Virus\Client\Virus\Client\obj\Debug\Client.csproj.
 C:\Users\Ron\Documents\GitHub\Virus\Client\Virus\Client\obj\Debug\Virus.exe
 C:\Users\Ron\Documents\GitHub\Virus\Client\Virus\Client\obj\Debug\Virus.pdb
 D:\Data\GitHub\Virus\Client\Virus\Client\bin\Debug\OpenHardwareMonitorLib.dll
+D:\OneDrive\Stuff\Programmieren\GitHub\Virus\Client\Virus\Client\obj\Debug\Client.csprojAssemblyReference.cache
+D:\OneDrive\Stuff\Programmieren\GitHub\Virus\Client\Virus\Client\obj\Debug\Client.csproj.CoreCompileInputs.cache
+D:\OneDrive\Stuff\Programmieren\GitHub\Virus\Client\Virus\Client\bin\Debug\Virus.exe.config
+D:\OneDrive\Stuff\Programmieren\GitHub\Virus\Client\Virus\Client\bin\Debug\Virus.exe
+D:\OneDrive\Stuff\Programmieren\GitHub\Virus\Client\Virus\Client\bin\Debug\Virus.pdb
+D:\OneDrive\Stuff\Programmieren\GitHub\Virus\Client\Virus\Client\bin\Debug\OpenHardwareMonitorLib.dll
+D:\OneDrive\Stuff\Programmieren\GitHub\Virus\Client\Virus\Client\obj\Debug\Client.csproj.CopyComplete
+D:\OneDrive\Stuff\Programmieren\GitHub\Virus\Client\Virus\Client\obj\Debug\Virus.exe
+D:\OneDrive\Stuff\Programmieren\GitHub\Virus\Client\Virus\Client\obj\Debug\Virus.pdb

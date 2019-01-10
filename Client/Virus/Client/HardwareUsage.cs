@@ -1,5 +1,4 @@
-﻿
-using OpenHardwareMonitor.Hardware;
+﻿using OpenHardwareMonitor.Hardware;
 using System;
 using System.Diagnostics;
 using System.Threading;
