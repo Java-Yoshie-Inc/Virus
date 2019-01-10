@@ -21,7 +21,7 @@ public class Client {
     private readonly string IP;
     private readonly string LOCAL_IP;
 
-    private static readonly string SERVER_IP = "http://77.6.74.114:61140";
+    private static readonly string SERVER_IP = "http://77.6.74.114:2225";
     private static readonly string LOGIN_CONTEXT = "login";
     private static readonly string UPDATE_CONTEXT = "update";
 
@@ -41,7 +41,7 @@ public class Client {
 
     private Client() {
         WaitForInternetConnection();
-        
+
         try {
             IP = GetPublicIP();
             LOCAL_IP = GetLocalIP();
