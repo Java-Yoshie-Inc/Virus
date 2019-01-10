@@ -84,7 +84,6 @@ public class Client {
 
         Task t = Task.Run(async () => {
             while (isRunning) {
-                Logger.Log("UPDATE: SAY yey "+new DateTime());
                 Update();
                 await Task.Delay(DELAY);
             }

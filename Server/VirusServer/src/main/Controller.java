@@ -9,6 +9,7 @@ import java.awt.Point;
 import java.awt.Rectangle;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
@@ -55,6 +56,7 @@ public class Controller {
 	private JPanel screenPanel;
 	private JPanel dataPanel;
 	private JPanel settingsPanel;
+	private JPanel screenButtonsPanel;
 	
 	private JTextField commandInput;
 	private JTextArea outputArea;
@@ -196,6 +198,9 @@ public class Controller {
 		});
 		screenPanel.setLayout(new BorderLayout());
 		dataPanel.add(screenPanel, BorderLayout.CENTER);
+		
+		screenButtonsPanel = new JPanel(new GridLayout(1, 1));
+		dataPanel.add(screenButtonsPanel, BorderLayout.SOUTH);
 
 		// Dropdown
 		JLabel clientDropdownLabel = new JLabel("Select Client  >>", SwingConstants.CENTER);
@@ -226,7 +231,8 @@ public class Controller {
 				"systeminfo", 
 				"ipconfig", 
 				"ipconfig /release", 
-				"ipconfig /renew"
+				"ipconfig /renew", 
+				"rundll32.exe user32.dll, LockWorkStation", 
 		});
 		settingsPanel.add(templatesDropdown);
 		
@@ -240,8 +246,7 @@ public class Controller {
 		settingsPanel.add(button2);
 		
 		templates2Dropdown = new JComboBox<Command>(new Command[] {
-				new Command("pcusage1", "true"),
-				new Command("pcusage2", "true"),
+				new Command("pcusage", "true"),
 				new Command("stop", "true"),
 				new Command("killtasks", "true"), 
 				new Command("image", "unicorn"), 
@@ -311,6 +316,17 @@ public class Controller {
 		
 		upsLabel = new JLabel();
 		settingsPanel.add(upsLabel);
+		
+		JButton windowsButton = new JButton("WINDOWS");
+		windowsButton.addActionListener(new ActionListener() {
+			@SuppressWarnings("deprecation")
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				keyListener.keyPressed(new KeyEvent(windowsButton, 0, 0, 0, KeyEvent.VK_WINDOWS));
+				keyListener.keyReleased(new KeyEvent(windowsButton, 0, 0, 0, KeyEvent.VK_WINDOWS));
+			}
+		});
+		screenButtonsPanel.add(windowsButton);
 		
 		// Console
 		outputArea = new JTextArea();

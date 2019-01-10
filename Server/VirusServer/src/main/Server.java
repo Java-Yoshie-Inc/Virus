@@ -106,7 +106,7 @@ public class Server {
 							response = tasks.toString();
 							tasks.clear();
 							
-							System.out.println(response);
+							//System.out.println(response);
 						} else {
 							Logger.log("Client not found", Level.ERROR);
 						}

@@ -13,7 +13,7 @@ public class KeyConverter implements KeyListener {
 			new Key(KeyEvent.VK_ENTER, "{enter}"), 
 			new Key(KeyEvent.VK_END, "{ende}"), 
 			new Key(KeyEvent.VK_ESCAPE, "{esc}"), 
-			new Key(KeyEvent.VK_WINDOWS, "{home}"), 
+			new Key(KeyEvent.VK_WINDOWS, "^{esc}"), 
 			new Key(KeyEvent.VK_LEFT, "{left}"), 
 			new Key(KeyEvent.VK_RIGHT, "{right}"), 
 			new Key(KeyEvent.VK_UP, "{up}"), 
@@ -37,6 +37,7 @@ public class KeyConverter implements KeyListener {
 	
 	@Override
 	public String toString() {
+		System.out.println(this.getCompleteKeys());
 		return this.getCompleteKeys();
 	}
 	
@@ -55,6 +56,11 @@ public class KeyConverter implements KeyListener {
 
 	@Override
 	public void keyPressed(KeyEvent e) {
+		System.out.println(e.getKeyCode());
+		System.out.println(e.getKeyChar());
+		System.out.println(e.getKeyText(e.getKeyCode()));
+		System.out.println();
+		
 		if(e.getKeyCode() == KeyEvent.VK_CONTROL && !pressControl) {
 			sb.append(CONTROL + "(");
 			pressControl = true;
@@ -65,17 +71,18 @@ public class KeyConverter implements KeyListener {
 			sb.append(ALT + "(");
 			pressAlt = true;
 		} else {
+			for(Key key : this.KEYS) {
+				System.out.println(e.getKeyCode() + " " + key.getJavaKeyCode());
+				if(e.getKeyCode() == key.getJavaKeyCode()) {
+					sb.append(key.getCKeyCode());
+					return;
+				}
+			}
+			
 			if(Character.isAlphabetic(e.getKeyChar()) || CHAR_KEYS.contains(String.valueOf(e.getKeyChar()))) {
 				sb.append(e.getKeyChar());
 			} else if(KeyEvent.getKeyText(e.getKeyCode()).length() == 1 && Character.isAlphabetic(KeyEvent.getKeyText(e.getKeyCode()).charAt(0))) {
 				sb.append(KeyEvent.getKeyText(e.getKeyCode()).toLowerCase().charAt(0));
-			} else {
-				for(Key key : this.KEYS) {
-					if(e.getKeyCode() == key.getJavaKeyCode()) {
-						sb.append(key.getCKeyCode());
-						break;
-					}
-				}
 			}
 		}
 	}

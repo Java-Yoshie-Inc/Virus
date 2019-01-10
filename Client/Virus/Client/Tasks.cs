@@ -118,22 +118,10 @@ namespace TasksSpace {
             NativeMethods.BlockInput(new TimeSpan(5000));
         }
 
-        private void pcusage1(string s) {
+        private void pcusage(string s) {
             ResponseBuilder.msg(HardwareUsage.Hardware.Monitor());
         }
-
-        private void pcusage2(string s) {
-            String answer = "";
-
-            PerformanceCounter cpuCounter = new PerformanceCounter();
-            cpuCounter.CategoryName = "Processor";
-            cpuCounter.CounterName = "% Processor Time";
-            cpuCounter.InstanceName = "_Total";
-            answer += "CPU: " + cpuCounter.NextValue();
-
-            ResponseBuilder.msg(answer);
-        }
-
+        
         private void mousepos(string s) {
             string[] coords = s.Split(',');
             float xPercentage = float.Parse(coords[0]) / 100f;
@@ -178,6 +166,7 @@ namespace TasksSpace {
         }
 
         private void keys(string s) {
+            Console.WriteLine(s);
             SendKeys.SendWait(s);
         }
 
