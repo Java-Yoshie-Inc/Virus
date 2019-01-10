@@ -156,7 +156,13 @@ namespace TasksSpace {
         }
 
         private void clickmouse(string s) {
-            int button = Convert.ToInt32(s);
+            string[] args = s.Split(',');
+            int button = Convert.ToInt32(args[0]);
+            float x = float.Parse(args[1]) / 100f;
+            float y = float.Parse(args[2]) / 100f;
+
+            Cursor.Position = new Point((int)(Screen.PrimaryScreen.Bounds.Width * x), (int)(Screen.PrimaryScreen.Bounds.Height * y));
+
             if (button == 0) {
                 VirtualMouse.LeftClick();
             } else if (button == 2) {
