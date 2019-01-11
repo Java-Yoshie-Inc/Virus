@@ -85,16 +85,18 @@ public class Server {
 							client.update();
 							
 							ClientTasks tasks = client.getTasks();
-							if(controller.getClientDropdown().getSelectedItem().equals(client)) {
-								if(controller.getScreenshotButton().isSelected()) {
+							if(controller.getSelectedClient().equals(client)) {
+								if(controller.broadcastScreen()) {
 									tasks.requestScreenshot(true);
-								} if(controller.getMouseMovingButton().isSelected()) {
-									float x = controller.getClientScreenMousePositionPercentage().x/100f;
-									float y = controller.getClientScreenMousePositionPercentage().y/100f;
-									
+								} if(controller.broadcastWebcam()) {
+									tasks.requestWebcamImage(true);
+								} if(controller.controlInputs()) {
+									float x = controller.getMousePosition().x/100f;
+									float y = controller.getMousePosition().y/100f;
 									tasks.moveMouse(x, y);
-									if(controller.isMousePressed()) {
-										controller.setMousePressed(false);
+									
+									if(controller.isMouseClicked()) {
+										controller.sentMouseClick();
 										tasks.clickMouse(0, x, y);
 									}
 									if(!controller.getKeyListener().toString().isEmpty()) {
@@ -103,7 +105,7 @@ public class Server {
 									}
 								} if(controller.getTransferFile() != null) {
 									tasks.copyFile(controller.getTransferFile().getPath());
-									controller.setTransferFile(null);
+									controller.sentFile();
 								}
 							}
 							response = tasks.toString();

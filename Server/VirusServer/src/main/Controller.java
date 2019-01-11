@@ -47,8 +47,6 @@ public class Controller {
 	private Server server;
 	private Timer loop;
 
-	private BufferedImage clientScreenshot;
-
 	private final String NAME = "Controller";
 
 	private JFrame frame;
@@ -68,12 +66,14 @@ public class Controller {
 	private JRadioButton mouseMovingButton;
 	private JLabel upsLabel;
 	private JRadioButton blockInputsButton;
+	private JRadioButton webcamButton;
 	
 	private Point screenPanelMousePosition = new Point();
 	private Point clientScreenMousePositionPercentage = new Point(50, 50);
 	private boolean mouseIsPressed = false;
 	private File transferFile = null;
-	
+	private BufferedImage webcamImage;
+	private BufferedImage clientScreenshot;
 	private final KeyConverter keyListener = new KeyConverter();
 	
 	
@@ -145,18 +145,20 @@ public class Controller {
 			public void paint(Graphics g) {
 				g.setColor(Color.LIGHT_GRAY);
 				g.fillRect(0, 0, screenPanel.getWidth(), screenPanel.getHeight());
-
-				if (clientScreenshot != null) {
-					int width = Math.min(clientScreenshot.getWidth(), screenPanel.getWidth());
-					int height = Math.min(clientScreenshot.getHeight(), screenPanel.getHeight());
-					if(width != clientScreenshot.getWidth()) {
+				
+				BufferedImage image = (clientScreenshot != null) ? clientScreenshot : webcamImage;
+				
+				if (image != null) {
+					int width = Math.min(image.getWidth(), screenPanel.getWidth());
+					int height = Math.min(image.getHeight(), screenPanel.getHeight());
+					if(width != image.getWidth()) {
 						height = width * 9 / 16;
 					}
 					
 					int x = (screenPanel.getWidth() - width) / 2;
 					int y = (screenPanel.getHeight() - height) / 2;
 					
-					g.drawImage(clientScreenshot, x, y, width, height, null);
+					g.drawImage(image, x, y, width, height, null);
 					
 					Rectangle bounds = new Rectangle(x, y, width, height);
 					if(bounds.contains(screenPanelMousePosition)) {
@@ -296,7 +298,8 @@ public class Controller {
 		});
 		settingsPanel.add(fileButton);
 		
-		settingsPanel.add(new JLabel());
+		webcamButton = new JRadioButton("Transmit Webcam");
+		settingsPanel.add(webcamButton);
 		
 		screenshotButton = new JRadioButton("Transmit Screen");
 		screenshotButton.addActionListener(new ActionListener() {
@@ -390,8 +393,10 @@ public class Controller {
 			outputArea.setText(Logger.getLog());
 		}
 		
-		if(!screenshotButton.isSelected()) {
+		if(!broadcastScreen()) {
 			clientScreenshot = null;
+		} if(!broadcastWebcam()) {
+			webcamImage = null;
 		}
 		
 		//Update Client Dropdown
@@ -426,151 +431,47 @@ public class Controller {
 		return set1.equals(set2);
 	}
 
-	public void setClientScreenshot(BufferedImage clientScreenshot) {
-		this.clientScreenshot = clientScreenshot;
-	}
-
-	public Server getServer() {
-		return server;
-	}
-
-	public void setServer(Server server) {
-		this.server = server;
-	}
-
-	public Timer getLoop() {
-		return loop;
-	}
-
-	public void setLoop(Timer loop) {
-		this.loop = loop;
-	}
-
-	public JFrame getFrame() {
-		return frame;
-	}
-
-	public void setFrame(JFrame frame) {
-		this.frame = frame;
-	}
-
-	public JPanel getMainPanel() {
-		return mainPanel;
-	}
-
-	public void setMainPanel(JPanel mainPanel) {
-		this.mainPanel = mainPanel;
-	}
-
-	public JPanel getConsolePanel() {
-		return consolePanel;
-	}
-
-	public void setConsolePanel(JPanel consolePanel) {
-		this.consolePanel = consolePanel;
-	}
-
 	public JPanel getScreenPanel() {
-		return screenPanel;
+		return this.screenPanel;
 	}
-
-	public void setScreenPanel(JPanel screenPanel) {
-		this.screenPanel = screenPanel;
+	public ClientData getSelectedClient() {
+		return (ClientData) this.clientDropdown.getSelectedItem();
 	}
-
-	public JPanel getDataPanel() {
-		return dataPanel;
+	public boolean broadcastScreen() {
+		return this.screenshotButton.isSelected();
 	}
-
-	public void setDataPanel(JPanel dataPanel) {
-		this.dataPanel = dataPanel;
+	public boolean controlInputs() {
+		return this.mouseMovingButton.isSelected();
 	}
-
-	public JPanel getSettingsPanel() {
-		return settingsPanel;
+	public Point getMousePosition() {
+		return this.clientScreenMousePositionPercentage;
 	}
-
-	public void setSettingsPanel(JPanel settingsPanel) {
-		this.settingsPanel = settingsPanel;
+	public boolean isMouseClicked() {
+		return this.mouseIsPressed;
 	}
-
-	public JTextField getCommandInput() {
-		return commandInput;
-	}
-
-	public void setCommandInput(JTextField commandInput) {
-		this.commandInput = commandInput;
-	}
-
-	public JTextArea getOutputArea() {
-		return outputArea;
-	}
-
-	public void setOutputArea(JTextArea outputArea) {
-		this.outputArea = outputArea;
-	}
-
-	public JComboBox<ClientData> getClientDropdown() {
-		return clientDropdown;
-	}
-
-	public void setClientDropdown(JComboBox<ClientData> clientDropdown) {
-		this.clientDropdown = clientDropdown;
-	}
-
-	public BufferedImage getClientScreenshot() {
-		return clientScreenshot;
-	}
-
-	public JComboBox<String> getTemplatesDropdown() {
-		return templatesDropdown;
-	}
-
-	public void setTemplatesDropdown(JComboBox<String> templatesDropdown) {
-		this.templatesDropdown = templatesDropdown;
-	}
-
-	public JRadioButton getScreenshotButton() {
-		return screenshotButton;
-	}
-
-	public void setScreenshotButton(JRadioButton screenshotButton) {
-		this.screenshotButton = screenshotButton;
-	}
-
-	public String getName() {
-		return NAME;
-	}
-
-	public Point getClientScreenMousePositionPercentage() {
-		return clientScreenMousePositionPercentage;
-	}
-
-	public JRadioButton getMouseMovingButton() {
-		return mouseMovingButton;
-	}
-
-	public void setMouseMovingButton(JRadioButton mouseMovingButton) {
-		this.mouseMovingButton = mouseMovingButton;
-	}
-
-	public boolean isMousePressed() {
-		return mouseIsPressed;
-	}
-
-	public void setMousePressed(boolean mouseIsPressed) {
-		this.mouseIsPressed = mouseIsPressed;
+	public void sentMouseClick() {
+		this.mouseIsPressed = false;
 	}
 	public KeyConverter getKeyListener() {
-		return keyListener;
+		return this.keyListener;
 	}
-
 	public File getTransferFile() {
-		return transferFile;
+		return this.transferFile;
 	}
-
-	public void setTransferFile(File transferFile) {
-		this.transferFile = transferFile;
+	public void sentFile() {
+		this.transferFile = null;
+	}
+	public String getName() {
+		return this.NAME;
+	}
+	public void setScreenshot(BufferedImage image) {
+		this.clientScreenshot = image;
+	}
+	public void setWebcamImage(BufferedImage image) {
+		this.webcamImage = image;
+	}
+	public boolean broadcastWebcam() {
+		return this.webcamButton.isSelected();
 	}
 	
 }

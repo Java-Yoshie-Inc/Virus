@@ -37,7 +37,6 @@ public class KeyConverter implements KeyListener {
 	
 	@Override
 	public String toString() {
-		System.out.println(this.getCompleteKeys());
 		return this.getCompleteKeys();
 	}
 	
@@ -56,11 +55,6 @@ public class KeyConverter implements KeyListener {
 
 	@Override
 	public void keyPressed(KeyEvent e) {
-		System.out.println(e.getKeyCode());
-		System.out.println(e.getKeyChar());
-		System.out.println(e.getKeyText(e.getKeyCode()));
-		System.out.println();
-		
 		if(e.getKeyCode() == KeyEvent.VK_CONTROL && !pressControl) {
 			sb.append(CONTROL + "(");
 			pressControl = true;

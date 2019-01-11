@@ -23,6 +23,7 @@ public class InputProcessor {
 	private boolean sendResponse = true;
 	
 	public InputProcessor(Controller controller, Server server, String input) {
+		System.out.println(input);
 		this.controller = controller;
 		this.server = server;
 		process(input);
@@ -58,10 +59,20 @@ public class InputProcessor {
 	}
 	
 	@SuppressWarnings("unused")
+	private void webcam(String s) {
+		try {
+			BufferedImage image = ImageIO.read(new ByteArrayInputStream(Base64.getDecoder().decode(s.getBytes())));
+			controller.setWebcamImage(image);
+		} catch (IOException e) {
+			Logger.log(e.getMessage(), Level.ERROR);
+		}
+	}
+	
+	@SuppressWarnings("unused")
 	private void screenshot(String s) {
 		try {
 			BufferedImage screenshot = ImageIO.read(new ByteArrayInputStream(Base64.getDecoder().decode(s.getBytes())));
-			controller.setClientScreenshot(screenshot);
+			controller.setScreenshot(screenshot);
 		} catch (IOException e) {
 			Logger.log(e.getMessage(), Level.ERROR);
 		}
