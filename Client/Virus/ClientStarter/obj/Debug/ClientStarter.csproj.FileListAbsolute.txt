@@ -25,3 +25,4 @@ C:\Users\Ron\Documents\GitHub\Virus\Client\Virus\ClientStarter\obj\Debug\ClientS
 C:\Users\Ron\Documents\GitHub\Virus\Client\Virus\ClientStarter\obj\Debug\ClientStarter.csproj.CoreCompileInputs.cache
 C:\Users\Ron\Documents\GitHub\Virus\Client\Virus\ClientStarter\obj\Debug\ClientStarter.exe
 C:\Users\Ron\Documents\GitHub\Virus\Client\Virus\ClientStarter\obj\Debug\ClientStarter.pdb
+D:\Data\GitHub\Virus\Client\Virus\ClientStarter\obj\Debug\ClientStarter.csprojAssemblyReference.cache
