@@ -23,7 +23,10 @@ namespace Virus {
         }
 
         public void Invoke() {
-            if (this.tasks.Length == 0) return;
+            if (this.tasks.Length == 0) {
+                Final();
+                return;
+            }
 
             string tasks = this.tasks.Substring(1, this.tasks.Length - 3);
             string[] requests = tasks.Split(new string[] { "],[" }, StringSplitOptions.RemoveEmptyEntries);
@@ -38,7 +41,7 @@ namespace Virus {
                     Console.WriteLine(e.ToString());
                 }
             }
-
+            
             Final();
         }
 
