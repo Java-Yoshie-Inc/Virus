@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace NamesSpace {
+﻿namespace Virus {
 
     public class Names {
 

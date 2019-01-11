@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace NamesSpace {
+﻿namespace NamesSpace {
 
     public class Names {
 

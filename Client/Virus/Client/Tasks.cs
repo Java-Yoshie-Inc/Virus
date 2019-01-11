@@ -1,19 +1,14 @@
-﻿using CommandSpace;
-using MouseManipulator;
-using ResponseBuilderSpace;
-using System;
+﻿using System;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Reflection;
 using System.Threading;
 using System.Windows.Forms;
-using ToolsSpace;
-using NamesSpace;
 using System.Speech.Synthesis;
 using System.Media;
 
-namespace TasksSpace {
+namespace Virus {
 
     public class Tasks {
 
@@ -127,7 +122,7 @@ namespace TasksSpace {
         }
 
         private void pcusage(string s) {
-            ResponseBuilder.msg(HardwareUsage.Hardware.Monitor());
+            ResponseBuilder.msg(Hardware.Monitor());
         }
 
         private void mousepos(string s) {

@@ -1,6 +1,7 @@
 ﻿using System.Runtime.InteropServices;
 
-namespace MouseManipulator {
+namespace Virus {
+
     public static class VirtualMouse {
         [DllImport("user32.dll")]
         static extern void mouse_event(int dwFlags, int dx, int dy, int dwData, int dwExtraInfo);

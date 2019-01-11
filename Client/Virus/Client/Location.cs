@@ -1,18 +1,16 @@
 ﻿using System;
 using System.Device.Location;
 
-namespace GetLocationProperty
-{
-    class Program
-    {
-        static void Maind(string[] args)
-        {
+namespace Virus {
+
+    class Program {
+
+        static void Maind(string[] args) {
             GetLocationProperty();
             Console.ReadLine();
         }
 
-        static void GetLocationProperty()
-        {
+        static void GetLocationProperty() {
             GeoCoordinateWatcher watcher = new GeoCoordinateWatcher();
 
             // Do not suppress prompt, and wait 1000 milliseconds to start.
@@ -20,14 +18,11 @@ namespace GetLocationProperty
 
             GeoCoordinate coord = watcher.Position.Location;
 
-            if (coord.IsUnknown != true)
-            {
+            if (coord.IsUnknown != true) {
                 Console.WriteLine("Lat: {0}, Long: {1}",
                     coord.Latitude,
                     coord.Longitude);
-            }
-            else
-            {
+            } else {
                 Console.WriteLine("Unknown latitude and longitude.");
             }
         }

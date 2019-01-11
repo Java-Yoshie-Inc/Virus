@@ -1,10 +1,8 @@
 ﻿using OpenHardwareMonitor.Hardware;
 using System;
 using System.Diagnostics;
-using System.Threading;
 
-namespace HardwareUsage
-{
+namespace Virus {
 
     public class Hardware
     {
@@ -14,9 +12,9 @@ namespace HardwareUsage
             string result = "";
 
             Computer computer = new Computer();
-            computer.Open();
             computer.CPUEnabled = true;
             computer.GPUEnabled = true;
+            computer.Open();
 
             for (int i = 0; i < computer.Hardware.Length; i++)
             {
