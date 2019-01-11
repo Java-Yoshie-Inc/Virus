@@ -33,6 +33,7 @@ import javax.swing.JRadioButton;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
+import javax.swing.ScrollPaneConstants;
 import javax.swing.SwingConstants;
 import javax.swing.Timer;
 
@@ -140,6 +141,7 @@ public class Controller {
 		screenPanel = new JPanel() {
 			private static final long serialVersionUID = 1L;
 
+			@Override
 			public void paint(Graphics g) {
 				g.setColor(Color.LIGHT_GRAY);
 				g.fillRect(0, 0, screenPanel.getWidth(), screenPanel.getHeight());
@@ -250,7 +252,7 @@ public class Controller {
 				new Command("stop", "true"),
 				new Command("killtasks", "true"), 
 				new Command("image", "unicorn"), 
-				new Command("skulllaughter", "true"), 
+				new Command("audio", "skull"), 
 				new Command("msgbox", new ParameterGetter() {
 					@Override
 					public String get() {
@@ -335,8 +337,8 @@ public class Controller {
 		outputArea.setWrapStyleWord(true);
 
 		JScrollPane scrollPane = new JScrollPane(outputArea);
-		scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
-		scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+		scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+		scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 		consolePanel.add(scrollPane, BorderLayout.CENTER);
 
 		// Input for Console
