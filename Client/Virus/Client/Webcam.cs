@@ -10,7 +10,7 @@ namespace Virus {
 
     public class Webcam {
 
-        private VideoCapture capture;
+        private static VideoCapture capture;
         private bool requested = false;
 
         public Webcam() {

