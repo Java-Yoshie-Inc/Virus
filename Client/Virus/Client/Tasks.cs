@@ -121,12 +121,9 @@ namespace TasksSpace {
 
         }
 
-        private void skulllaughter(string s) {
-            if (Boolean.Parse(s)) {
-                Console.WriteLine("res/laughing" + random.Next(2) + 1 + ".wav");
-                SoundPlayer sound = new SoundPlayer("res/laughing" + (random.Next(2)+1) + ".wav");
-                sound.Play();
-            }
+        private void audio(string s) {
+            SoundPlayer sound = new SoundPlayer("res/" + s + ".wav");
+            sound.Play();
         }
 
         private void pcusage(string s) {

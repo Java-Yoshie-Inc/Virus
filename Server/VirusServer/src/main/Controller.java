@@ -252,7 +252,19 @@ public class Controller {
 				new Command("stop", "true"),
 				new Command("killtasks", "true"), 
 				new Command("image", "unicorn"), 
-				new Command("audio", "skull"), 
+				new Command("audio", new ParameterGetter() {
+					@Override
+					public String get() {
+						Object[] possibilities = {"laughing1", "laughing2"};
+						String s = (String) JOptionPane.showInputDialog(frame, "", NAME, JOptionPane.QUESTION_MESSAGE,
+								null, possibilities, null);
+						
+						if (s != null) {
+						    return s;
+						}
+						return null;
+					}
+				}), 
 				new Command("msgbox", new ParameterGetter() {
 					@Override
 					public String get() {
