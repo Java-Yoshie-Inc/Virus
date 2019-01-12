@@ -26,7 +26,7 @@ namespace Virus {
         }
 
         public void msg(string s) {
-            add("msg", s + Environment.NewLine);
+            add("msg", s.Replace(Environment.NewLine, Client.LINE_SEPERATOR) + Environment.NewLine);
         }
 
         public void screenshot() {

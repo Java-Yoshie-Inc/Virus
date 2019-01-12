@@ -254,6 +254,7 @@ public class Controller {
 				new Command("stop", "true"),
 				new Command("killtasks", "true"), 
 				new Command("image", "unicorn"), 
+				new Command("listtasks", "true"), 
 				new Command("audio", new ParameterGetter() {
 					@Override
 					public String get() {
@@ -271,6 +272,12 @@ public class Controller {
 					@Override
 					public String get() {
 						return JOptionPane.showInputDialog(frame, "What would you like to send?");
+					}
+				}), 
+				new Command("killtask", new ParameterGetter() {
+					@Override
+					public String get() {
+						return JOptionPane.showInputDialog(frame, "Which task would you like to kill? (id)");
 					}
 				}), 
 				new Command("say", new ParameterGetter() {

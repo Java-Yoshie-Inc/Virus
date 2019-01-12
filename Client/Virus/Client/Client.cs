@@ -14,7 +14,7 @@ public class Client {
     private readonly string IP;
     private readonly string LOCAL_IP;
 
-    private static readonly string SERVER_IP = "http://77.8.196.39:2225";
+    private static readonly string SERVER_IP = "http://localhost:2225";
     private static readonly string LOGIN_CONTEXT = "login";
     private static readonly string UPDATE_CONTEXT = "update";
 
@@ -69,11 +69,6 @@ public class Client {
     }
 
     public void StartTimer() {
-        /*while(true) {
-            Update();
-            Thread.Sleep(100);
-        }*/
-
         Task t = Task.Run(async () => {
             while (isRunning) {
                 Update();
