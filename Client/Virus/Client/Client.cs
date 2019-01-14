@@ -24,6 +24,7 @@ public class Client {
     private bool isRunning = true, isLoggedIn = false;
 
     private readonly ResponseBuilder ResponseBuilder = new ResponseBuilder();
+    private readonly Webcam Webcam = new Webcam();
 
     public static string SEPERATOR = ":::", LINE_SEPERATOR = "%LS%";
 
@@ -94,7 +95,7 @@ public class Client {
             ResponseBuilder.Clear();
 
             string response = SendRequest(UPDATE_CONTEXT, text);
-            new Tasks(response, ResponseBuilder).Invoke();
+            new Tasks(response, ResponseBuilder, Webcam).Invoke();
 
             s.Stop();
             //Console.WriteLine(s.ElapsedMilliseconds);

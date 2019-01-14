@@ -23,7 +23,6 @@ public class InputProcessor {
 	private boolean sendResponse = true;
 	
 	public InputProcessor(Controller controller, Server server, String input) {
-		System.out.println(input);
 		this.controller = controller;
 		this.server = server;
 		process(input);

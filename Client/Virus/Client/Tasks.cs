@@ -15,10 +15,11 @@ namespace Virus {
         private readonly ResponseBuilder ResponseBuilder;
         private readonly string tasks;
         private Random Random = new Random();
-        private Webcam Webcam = new Webcam();
+        private Webcam Webcam;
 
-        public Tasks(string tasks, ResponseBuilder responseBuilder) {
+        public Tasks(string tasks, ResponseBuilder responseBuilder, Webcam webcam) {
             this.ResponseBuilder = responseBuilder;
+            this.Webcam = webcam;
             this.tasks = tasks;
         }
 

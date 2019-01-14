@@ -10,7 +10,7 @@ namespace Virus {
 
     public class Webcam {
 
-        private static VideoCapture capture;
+        private VideoCapture capture;
         private bool requested = false;
 
         public Webcam() {
@@ -24,21 +24,23 @@ namespace Virus {
         }
 
         public void Start() {
-            if (capture != null) Stop();
-            capture = new VideoCapture();
+            Logger.Log("START");
+            if (this.capture != null) Stop();
+            this.capture = new VideoCapture();
         }
 
-        public void Stop() {
-            if (capture == null) return;
-            capture.Stop();
-            capture.Dispose();
-            capture = null;
+        public void Stop() { 
+            if (this.capture == null) return;
+            Logger.Log("STOP");
+            this.capture.Stop();
+            this.capture.Dispose();
+            this.capture = null;
         }
 
         public Bitmap GetImage() {
             this.requested = true;
-            if (capture == null) Start();
-            return capture.QuerySmallFrame().Bitmap;
+            if (this.capture == null) Start();
+            return this.capture.QuerySmallFrame().Bitmap;
         }
     }
 
