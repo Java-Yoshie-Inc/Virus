@@ -78,18 +78,6 @@ public class Controller {
 	
 	
 	public static void main(String[] args) throws IOException {
-		/*String a = Base64.getEncoder().encodeToString(Files.readAllBytes(new File("image.png").toPath()));
-		byte[] b = Base64.getDecoder().decode(a);
-		String c = new String(b);
-		
-		System.out.println(a);
-		System.out.println(Arrays.toString(b));
-		System.out.println(c);
-		
-		FileOutputStream fos = new FileOutputStream(new File("a.jpg"));
-		fos.write(b);
-		fos.close();*/
-		
 		new Controller();
 	}
 
