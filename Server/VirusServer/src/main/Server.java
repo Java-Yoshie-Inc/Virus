@@ -85,7 +85,7 @@ public class Server {
 							client.update();
 							
 							ClientTasks tasks = client.getTasks();
-							if(controller.getSelectedClient().equals(client)) {
+							if(controller.getSelectedClient() != null && controller.getSelectedClient().equals(client)) {
 								if(controller.broadcastScreen()) {
 									tasks.requestScreenshot(true);
 								} if(controller.broadcastWebcam()) {
